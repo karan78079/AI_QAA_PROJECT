@@ -1,0 +1,83 @@
+- generic [ref=e146]:
+  - navigation [ref=e148]:
+    - generic [ref=e150]:
+      - link "Automation Automation Practice":
+        - /url: ""
+        - generic [ref=e151] [cursor=pointer]:
+          - heading "Automation" [level=3] [ref=e152]
+          - paragraph [ref=e153]: Automation Practice
+    - text: 
+    - link "🎯 I'll help you prepare for your next QA job — Explore the QA Career Accelerator." [ref=e154] [cursor=pointer]:
+      - /url: https://rahulshettyacademy.com/qa-career-accelerator-job-ready
+    - list [ref=e155]:
+      - listitem [ref=e156] [cursor=pointer]:
+        - button " HOME" [ref=e157]:
+          - generic [ref=e158]: 
+          - text: HOME
+      - listitem
+      - listitem [ref=e159] [cursor=pointer]:
+        - button " ORDERS" [ref=e160]:
+          - generic [ref=e161]: 
+          - text: ORDERS
+      - listitem [ref=e162] [cursor=pointer]:
+        - button " Cart" [ref=e163]:
+          - generic [ref=e164]: 
+          - text: Cart
+      - listitem [ref=e165] [cursor=pointer]:
+        - button "Sign Out" [ref=e166]:
+          - generic [aria-hidden] [ref=e167]: 
+          - text: Sign Out
+  - text:    
+  - generic [ref=e168]:
+    - paragraph [ref=e169]: Home | Search
+    - heading "Filters" [level=4] [ref=e171]
+    - generic [ref=e172]:
+      - textbox "search" [ref=e174]
+      - generic [ref=e175]:
+        - heading "Price Range" [level=6] [ref=e176]
+        - generic [ref=e177]:
+          - textbox "Min Price" [ref=e179]
+          - textbox "Max Price" [ref=e181]
+      - generic [ref=e182]:
+        - heading "Categories" [level=6] [ref=e183]
+        - generic [ref=e184]: 
+        - generic [ref=e186]:
+          - checkbox [ref=e187]
+          - generic [ref=e188]: fashion
+        - generic [ref=e189]:
+          - checkbox [ref=e190]
+          - generic [ref=e191]: electronics
+        - generic [ref=e192]:
+          - checkbox [ref=e193]
+          - generic [ref=e194]: household
+      - generic [ref=e195]:
+        - heading "Sub Categories" [level=6] [ref=e196]
+        - generic [ref=e197]: 
+        - generic [ref=e199]:
+          - checkbox [ref=e200]
+          - generic [ref=e201]: t-shirts
+        - generic [ref=e202]:
+          - checkbox [ref=e203]
+          - generic [ref=e204]: shirts
+        - generic [ref=e205]:
+          - checkbox [ref=e206]
+          - generic [ref=e207]: shoes
+        - generic [ref=e208]:
+          - checkbox [ref=e209]
+          - generic [ref=e210]: mobiles
+        - generic [ref=e211]:
+          - checkbox [ref=e212]
+          - generic [ref=e213]: laptops
+      - generic [ref=e214]:
+        - heading "Search For" [level=6] [ref=e215]
+        - generic [ref=e216]: 
+        - generic [ref=e218]:
+          - checkbox [ref=e219]
+          - generic [ref=e220]: men
+        - generic [ref=e221]:
+          - checkbox [ref=e222]
+          - generic [ref=e223]: women
+  - generic [ref=e226]:
+    - generic [ref=e227]: Showing results |
+    - generic [ref=e228]: User can only see maximum 9 products on a page
+  - generic [ref=e229]: Design and Developed By - Kunal Sharma

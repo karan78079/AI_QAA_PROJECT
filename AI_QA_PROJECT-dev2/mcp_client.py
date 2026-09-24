@@ -13,7 +13,7 @@ from mcp.client.stdio import stdio_client
 load_dotenv()
 
 
-def _snapshot_text(result) -> str:
+def _extract_snapshot_text(result) -> str:
     parts = []
     for item in getattr(result, "content", []) or []:
         text = getattr(item, "text", None)
@@ -22,8 +22,12 @@ def _snapshot_text(result) -> str:
     return "\n".join(parts) or str(result)
 
 
-def _result_json(result) -> list:
-    text = _snapshot_text(result)
+def _snapshot_text(result) -> str:
+    return _extract_snapshot_text(result)
+
+
+def _extract_json_list(result) -> list:
+    text = _extract_snapshot_text(result)
     try:
         return json.loads(text)
     except json.JSONDecodeError:
@@ -38,8 +42,12 @@ def _result_json(result) -> list:
     return []
 
 
-def _evaluate_text(result) -> str:
-    text = _snapshot_text(result).strip()
+def _result_json(result) -> list:
+    return _extract_json_list(result)
+
+
+def _extract_text_value(result) -> str:
+    text = _extract_snapshot_text(result).strip()
     page_match = re.search(r"Page URL:\s*(https?://[^\s]+)", text)
     if page_match:
         return page_match.group(1)
@@ -47,7 +55,11 @@ def _evaluate_text(result) -> str:
     return result_match.group(1).strip() if result_match else text
 
 
-async def _discover_interactive_routes(session) -> list[str]:
+def _evaluate_text(result) -> str:
+    return _extract_text_value(result)
+
+
+async def _discover_navigation_routes(session) -> list[str]:
     result = await session.call_tool(
         "browser_evaluate",
         {
@@ -72,7 +84,11 @@ async def _discover_interactive_routes(session) -> list[str]:
             }""",
         },
     )
-    return _result_json(result)
+    return _extract_json_list(result)
+
+
+async def _discover_interactive_routes(session) -> list[str]:
+    return await _discover_navigation_routes(session)
 
 
 def _canonical_url(url: str) -> str:
@@ -130,7 +146,7 @@ async def _authenticate(session) -> str | None:
             }}""",
         },
     )
-    location = _evaluate_text(result)
+    location = _extract_text_value(result)
     try:
         location = json.loads(location)
     except json.JSONDecodeError:
@@ -174,7 +190,7 @@ async def get_page_snapshot(url):
                 {}
             )
 
-            return _snapshot_text(result)
+            return _extract_snapshot_text(result)
 
 
 async def discover_site(url: str, max_pages: int = 100) -> str:
@@ -213,7 +229,7 @@ async def discover_site(url: str, max_pages: int = 100) -> str:
                         if authenticated_url and _in_crawl_scope(authenticated_url, origin, base_path):
                             current_url = authenticated_url
                             visited.add(current_url)
-                    snapshot = _snapshot_text(
+                    snapshot = _extract_snapshot_text(
                         await session.call_tool("browser_snapshot", {})
                     )
                     pages.append(f"PAGE URL: {current_url}\n{snapshot}")

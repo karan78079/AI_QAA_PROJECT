@@ -11,7 +11,7 @@ from openai import APIError, APIStatusError, OpenAI
 load_dotenv()
 
 
-def detect_test_type(test_case: str) -> str:
+def detect_test_type_from_prompt(test_case: str) -> str:
 	text = (test_case or "").lower()
 	if re.search(r"\bui\s+testing\s+only\b|\btest\s+type\s*:\s*ui\b", text):
 		return "ui"
@@ -56,12 +56,20 @@ def detect_test_type(test_case: str) -> str:
 	return "ui"
 
 
-def _normalize_page_url(url: str) -> str:
+def detect_test_type(test_case: str) -> str:
+	return detect_test_type_from_prompt(test_case)
+
+
+def _normalize_page_url_for_matching(url: str) -> str:
 	parts = urlsplit(url.strip())
 	path = parts.path.rstrip("/") or "/"
 	if parts.fragment.startswith("/") and path != "/":
 		path += "/"
 	return urlunsplit((parts.scheme, parts.netloc, path, parts.query, parts.fragment))
+
+
+def _normalize_page_url(url: str) -> str:
+	return _normalize_page_url_for_matching(url)
 
 
 def _client() -> OpenAI:
@@ -75,12 +83,16 @@ def _client() -> OpenAI:
 	)
 
 
-def _code_from_response(content: str) -> str:
+def _extract_python_code(content: str) -> str:
 	match = re.search(r"```(?:python)?\s*(.*?)```", content, re.DOTALL | re.IGNORECASE)
 	return (match.group(1) if match else content).strip() + "\n"
 
 
-def _json_from_response(content: str) -> dict:
+def _code_from_response(content: str) -> str:
+	return _extract_python_code(content)
+
+
+def _extract_json_payload(content: str) -> dict:
 	cleaned = content.strip()
 	match = re.search(r"```(?:json)?\s*(.*?)```", cleaned, re.DOTALL | re.IGNORECASE)
 	if match:
@@ -91,7 +103,11 @@ def _json_from_response(content: str) -> dict:
 		raise RuntimeError("Gemini returned an invalid test plan") from error
 
 
-def generate_test_plan(requirements: str) -> dict:
+def _json_from_response(content: str) -> dict:
+	return _extract_json_payload(content)
+
+
+def generate_test_plan_for_requirements(requirements: str) -> dict:
 	model = os.getenv("GEMINI_MODEL", "gemini-3.6-flash")
 	messages = [
 		{
@@ -115,7 +131,7 @@ test case and never return a summary instead of the complete list.
 	]
 	response = _request(messages, model)
 	content = response.choices[0].message.content or ""
-	plan = _json_from_response(content)
+	plan = _extract_json_payload(content)
 	if plan.get("test_type") not in {"api", "ui"} or not isinstance(plan.get("test_cases"), list):
 		raise RuntimeError("Gemini returned an incomplete test plan")
 	if not plan["test_cases"]:
@@ -134,9 +150,13 @@ test case and never return a summary instead of the complete list.
 	return plan
 
 
-def generate_discovery_test_plan(url: str, browser_snapshot: str) -> dict:
+def generate_test_plan(requirements: str) -> dict:
+	return generate_test_plan_for_requirements(requirements)
+
+
+def generate_discovery_test_plan_from_snapshot(url: str, browser_snapshot: str) -> dict:
 	model = os.getenv("GEMINI_MODEL", "gemini-3.6-flash")
-	minimum_cases = max(1, int(os.getenv("MIN_GENERATED_TEST_CASES", "8")))
+	minimum_cases = max(1, int(os.getenv("MIN_GENERATED_TEST_CASES", "7")))
 	messages = [
 		{
 			"role": "system",
@@ -171,7 +191,7 @@ environment variables TEST_EMAIL and TEST_PASSWORD for authentication.
 	]
 	response = _request(messages, model)
 	content = response.choices[0].message.content or ""
-	plan = _json_from_response(content)
+	plan = _extract_json_payload(content)
 	if plan.get("test_type") != "ui" or not isinstance(plan.get("test_cases"), list):
 		raise RuntimeError("Gemini returned an incomplete discovery test plan")
 	if not plan["test_cases"]:
@@ -211,7 +231,11 @@ environment variables TEST_EMAIL and TEST_PASSWORD for authentication.
 	return plan
 
 
-def _request(messages: list[dict[str, str]], model: str):
+def generate_discovery_test_plan(url: str, browser_snapshot: str) -> dict:
+	return generate_discovery_test_plan_from_snapshot(url, browser_snapshot)
+
+
+def _request_lm_response(messages: list[dict[str, str]], model: str):
 	for attempt in range(3):
 		try:
 			return _client().chat.completions.create(
@@ -237,7 +261,11 @@ def _request(messages: list[dict[str, str]], model: str):
 			time.sleep(2 ** attempt)
 
 
-def generate_api_test_code(test_case: str) -> str:
+def _request(messages: list[dict[str, str]], model: str):
+	return _request_lm_response(messages, model)
+
+
+def generate_api_test_code_for_requirement(test_case: str) -> str:
 	model = os.getenv("GEMINI_MODEL", "gemini-3.6-flash")
 	messages = [
 		{
@@ -259,14 +287,18 @@ Keep the code minimal, valid Python, and ready to run with pytest.
 			"content": f"API TEST CASE:\n{test_case}\n",
 		},
 	]
-	response = _request(messages, model)
+	response = _request_lm_response(messages, model)
 	content = response.choices[0].message.content or ""
 	if not content.strip():
 		raise RuntimeError("Gemini returned empty API test code")
-	return _code_from_response(content)
+	return _extract_python_code(content)
 
 
-def generate_test_code(test_case: str, browser_snapshot: str, test_type: str | None = None) -> str:
+def generate_api_test_code(test_case: str) -> str:
+	return generate_api_test_code_for_requirement(test_case)
+
+
+def generate_test_code_for_case(test_case: str, browser_snapshot: str, test_type: str | None = None) -> str:
 	test_type = test_type or detect_test_type(test_case)
 	if test_type == "api":
 		return generate_api_test_code(test_case)
@@ -302,10 +334,14 @@ self-contained, including a sync_playwright context and browser cleanup.
 	content = response.choices[0].message.content or ""
 	if not content.strip():
 		raise RuntimeError("Gemini returned empty test code")
-	return _code_from_response(content)
+	return _extract_python_code(content)
 
 
-def repair_api_test_code(test_case: str, current_code: str, failure_output: str) -> str:
+def generate_test_code(test_case: str, browser_snapshot: str, test_type: str | None = None) -> str:
+	return generate_test_code_for_case(test_case, browser_snapshot, test_type=test_type)
+
+
+def repair_api_test_code_for_failure(test_case: str, current_code: str, failure_output: str) -> str:
 	messages = [
 		{
 			"role": "system",
@@ -330,10 +366,14 @@ The result must contain at least one function named test_... and be valid Python
 	content = response.choices[0].message.content or ""
 	if not content.strip():
 		raise RuntimeError("Gemini returned empty repaired API test code")
-	return _code_from_response(content)
+	return _extract_python_code(content)
 
 
-def repair_test_code(
+def repair_api_test_code(test_case: str, current_code: str, failure_output: str) -> str:
+	return repair_api_test_code_for_failure(test_case, current_code, failure_output)
+
+
+def repair_generated_test_code_for_failure(
 	test_case: str,
 	browser_snapshot: str,
 	current_code: str,
@@ -370,4 +410,18 @@ must contain at least one function named test_... and be valid Python.
 	content = response.choices[0].message.content or ""
 	if not content.strip():
 		raise RuntimeError("Gemini returned empty repaired test code")
-	return _code_from_response(content)
+	return _extract_python_code(content)
+
+
+def repair_test_code(
+	test_case: str,
+	browser_snapshot: str,
+	current_code: str,
+	failure_output: str,
+) -> str:
+	return repair_generated_test_code_for_failure(
+		test_case,
+		browser_snapshot,
+		current_code,
+		failure_output,
+	)

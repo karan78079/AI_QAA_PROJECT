@@ -21,7 +21,7 @@ class TestExecutionResult:
 		return self.stderr or self.stdout
 
 
-def _result_status(returncode: int, output: str) -> str:
+def _determine_test_status(returncode: int, output: str) -> str:
 	if returncode != 0:
 		return "failed"
 	if " skipped" in output or " skipped in " in output:
@@ -29,14 +29,22 @@ def _result_status(returncode: int, output: str) -> str:
 	return "passed"
 
 
-def validate_python(test_file: Path) -> None:
+def _result_status(returncode: int, output: str) -> str:
+	return _determine_test_status(returncode, output)
+
+
+def validate_generated_python_test(test_file: Path) -> None:
 	source = test_file.read_text(encoding="utf-8")
 	compile(source, str(test_file), "exec")
 	if "def test_" not in source:
 		raise ValueError("Generated test does not contain a pytest test function")
 
 
-def run_pytest(test_file: Path, collect_only: bool = False) -> TestExecutionResult:
+def validate_python(test_file: Path) -> None:
+	validate_generated_python_test(test_file)
+
+
+def execute_pytest_for_file(test_file: Path, collect_only: bool = False) -> TestExecutionResult:
 	test_path = test_file.resolve()
 	command = [sys.executable, "-m", "pytest", str(test_path)]
 	if collect_only:
@@ -65,7 +73,7 @@ def run_pytest(test_file: Path, collect_only: bool = False) -> TestExecutionResu
 	)
 	duration = time.perf_counter() - started
 	return TestExecutionResult(
-		status=_result_status(completed.returncode, completed.stdout),
+		status=_determine_test_status(completed.returncode, completed.stdout),
 		exit_code=completed.returncode,
 		duration=duration,
 		stdout=completed.stdout,
@@ -74,7 +82,11 @@ def run_pytest(test_file: Path, collect_only: bool = False) -> TestExecutionResu
 	)
 
 
-def classify_failure(output: str) -> str:
+def run_pytest(test_file: Path, collect_only: bool = False) -> TestExecutionResult:
+	return execute_pytest_for_file(test_file, collect_only=collect_only)
+
+
+def classify_test_failure(output: str) -> str:
 	text = output.lower()
 	if any(value in text for value in (
 		"connection_timed_out",
@@ -95,9 +107,17 @@ def classify_failure(output: str) -> str:
 	return "failed_test"
 
 
-def write_report(path: Path, attempts: list[dict], metadata: dict | None = None) -> None:
+def classify_failure(output: str) -> str:
+	return classify_test_failure(output)
+
+
+def write_test_report(path: Path, attempts: list[dict], metadata: dict | None = None) -> None:
 	path.parent.mkdir(parents=True, exist_ok=True)
 	report = {"attempts": attempts}
 	if metadata:
 		report.update(metadata)
 	path.write_text(json.dumps(report, indent=2), encoding="utf-8")
+
+
+def write_report(path: Path, attempts: list[dict], metadata: dict | None = None) -> None:
+	write_test_report(path, attempts, metadata=metadata)

@@ -372,15 +372,7 @@ Use this order during the presentation:
 13. Show HTML, JSON, and JUnit reports.
 14. Finish with limitations and future improvements.
 
-## 13. Simple Explanation For A Teacher
-
-> This project is an AI-powered test automation framework. It can test web user
-> interfaces and REST APIs. For UI testing, Playwright MCP explores the live website
-> and gives Gemini browser context. Gemini generates Playwright pytest tests. For API
-> testing, Gemini reads API requirements and generates requests-based pytest tests.
-> Before execution, the user reviews the generated cases. If a test fails, the
-> framework saves the failed version and asks Gemini to repair it within a limited
-> number of attempts. Finally, it produces JSON, HTML, and JUnit reports.
+.
 
 ## 14. Strengths
 

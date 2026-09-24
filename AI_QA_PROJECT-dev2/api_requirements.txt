@@ -1,0 +1,15 @@
+Validate the Rahul Shetty API contract only using routes that have been confirmed to return JSON.
+
+Important rule: do not assume product, cart, or order routes unless the live service returns JSON. If a route responds with HTML, 404, 405, or cannot be parsed as JSON, treat it as unsupported for this site.
+
+1. Validate POST /api/ecom/auth/login with valid email and password.
+   - Check that the request succeeds with HTTP 200.
+   - Verify the response is JSON and contains a token or user identifier.
+
+2. Validate invalid login handling.
+   - Submit incorrect credentials.
+   - Confirm the response is a predictable error payload or a JSON failure message.
+
+3. If additional product or cart routes are used, confirm them live before generating tests.
+   - Example: ensure the route responds with application/json and not a login page or HTML error page.
+   - If the route returns HTML or 404, it does not belong in the live contract for this site.

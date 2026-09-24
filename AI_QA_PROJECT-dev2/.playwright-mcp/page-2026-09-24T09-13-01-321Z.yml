@@ -1,0 +1,461 @@
+- generic [ref=e2]:
+  - region "Notifications (F8)":
+    - list
+  - region "Notifications alt+T"
+  - generic:
+    - generic:
+      - generic:
+        - generic:
+          - generic: Limited Time — Free
+          - button "Dismiss popup"
+        - generic:
+          - heading "Join Our Academy & Unlock 2 Premium Courses — FREE" [level=3]: Join Our Academy & Unlock2 Premium Courses — FREE
+          - paragraph: Sign up once. No credit card. Instant access.
+        - list:
+          - listitem:
+            - generic: Java Design Patterns for Test Framework
+          - listitem:
+            - generic: SDET/QA Automation Interview Kit + Java Logic Programs
+        - link "Sign Up Free →":
+          - /url: https://courses.rahulshettyacademy.com/sign_up
+        - paragraph: Usually $197 · Now completely FREE
+  - generic [ref=e3]:
+    - navigation [ref=e4]:
+      - generic [ref=e6]:
+        - link [ref=e8] [cursor=pointer]:
+          - /url: /
+          - img "Rahul Shetty Academy" [ref=e9]
+        - generic [ref=e10]:
+          - link "All-Access" [ref=e11] [cursor=pointer]:
+            - /url: /all-access-subscription
+          - link "Learning Paths" [ref=e14] [cursor=pointer]:
+            - /url: /learning-paths
+          - link "Courses" [ref=e19] [cursor=pointer]:
+            - /url: /course-library
+          - link "Mentorship" [ref=e22] [cursor=pointer]:
+            - /url: /mentorship
+          - button "Career Accelerator (Job/Skill-Oriented) NEW" [ref=e28] [cursor=pointer]:
+            - generic [ref=e32]:
+              - generic [ref=e33]: Career Accelerator
+              - generic [ref=e36]: (Job/Skill-Oriented)
+            - generic [ref=e37]: NEW
+          - link "Practice Apps" [ref=e38] [cursor=pointer]:
+            - /url: /practice
+        - generic [ref=e43]:
+          - link "Contact Us" [ref=e44] [cursor=pointer]:
+            - /url: /contact-us
+          - button "Resources" [ref=e48] [cursor=pointer]
+          - link "Sign Up" [ref=e56] [cursor=pointer]:
+            - /url: https://courses.rahulshettyacademy.com/sign_up
+    - generic [ref=e57]:
+      - generic [ref=e58]: Latest
+      - generic [ref=e67]:
+        - generic [ref=e68]:
+          - generic [ref=e69]: ◆
+          - generic [ref=e70]:
+            - text: "🎤 New: QA Career Guidance Talk by Rahul Shetty — 3 hours of career strategy, AI era frameworks, and a 2026 roadmap."
+            - link "Watch Now" [ref=e71] [cursor=pointer]:
+              - /url: /qa-career-guidance-talk
+        - generic [ref=e72]:
+          - generic [ref=e73]: ◆
+          - generic [ref=e74]: "🚀 Just Released: New K6 Performance Testing Masterclass is now live- Checkout in Course library"
+        - generic [ref=e75]:
+          - generic [ref=e76]: ◆
+          - generic [ref=e77]:
+            - text: "💼 Get Shortlisted by Recruiters: Take QA skill assessments on"
+            - link "TechSmartHire" [ref=e78] [cursor=pointer]:
+              - /url: https://techsmarthire.com
+            - text: and unlock real job opportunities
+        - generic [ref=e79]:
+          - generic [ref=e80]: ◆
+          - generic [ref=e81]:
+            - text: "🧪 New Automation Playground: Practice Web & API Automation on our"
+            - link "Full Stack Event Hub demo application" [ref=e82] [cursor=pointer]:
+              - /url: https://eventhub.rahulshettyacademy.com/
+        - generic [ref=e83]:
+          - generic [ref=e84]: ◆
+          - generic [ref=e85]: "🤖 Agentic AI is here: Claude Code-powered QA workflows now covered in the Gen AI & AI Agents Testing course — watch the new additions."
+        - generic [ref=e86]:
+          - generic [ref=e87]: ◆
+          - generic [ref=e88]: 🔥 ISTQB AI Testing course crosses 1,500 students in just 14 days — Surge in demand for Certs
+        - generic [ref=e89]:
+          - generic [ref=e90]: ◆
+          - generic [ref=e91]:
+            - text: "🎓 Limited-Time Access: Unlock 40+ QA & AI courses with"
+            - link "All-Access Membership" [ref=e92] [cursor=pointer]:
+              - /url: /all-access-subscription
+            - text: for just $129*
+        - generic [ref=e93]:
+          - generic [ref=e94]: ◆
+          - generic [ref=e95]: "📈 Playwright Surge is Real: Learning consumption has increased by 250%+ in the last quarter"
+        - generic [ref=e96]:
+          - generic [ref=e97]: ─ ─ ─ ─ ─
+          - generic [ref=e98]:
+            - text: 📬 That's all for now —
+            - link "Subscribe to our Newsletter" [ref=e99] [cursor=pointer]:
+              - /url: https://courses.rahulshettyacademy.com/sign_up
+            - text: and get updates like these once a month.
+        - generic [ref=e100]:
+          - generic [ref=e101]: ◆
+          - generic [ref=e102]:
+            - text: "🎤 New: QA Career Guidance Talk by Rahul Shetty — 3 hours of career strategy, AI era frameworks, and a 2026 roadmap."
+            - link "Watch Now" [ref=e103] [cursor=pointer]:
+              - /url: /qa-career-guidance-talk
+        - generic [ref=e104]:
+          - generic [ref=e105]: ◆
+          - generic [ref=e106]: "🚀 Just Released: New K6 Performance Testing Masterclass is now live- Checkout in Course library"
+        - generic [ref=e107]:
+          - generic [ref=e108]: ◆
+          - generic [ref=e109]:
+            - text: "💼 Get Shortlisted by Recruiters: Take QA skill assessments on"
+            - link "TechSmartHire" [ref=e110] [cursor=pointer]:
+              - /url: https://techsmarthire.com
+            - text: and unlock real job opportunities
+        - generic [ref=e111]:
+          - generic [ref=e112]: ◆
+          - generic [ref=e113]:
+            - text: "🧪 New Automation Playground: Practice Web & API Automation on our"
+            - link "Full Stack Event Hub demo application" [ref=e114] [cursor=pointer]:
+              - /url: https://eventhub.rahulshettyacademy.com/
+        - generic [ref=e115]:
+          - generic [ref=e116]: ◆
+          - generic [ref=e117]: "🤖 Agentic AI is here: Claude Code-powered QA workflows now covered in the Gen AI & AI Agents Testing course — watch the new additions."
+        - generic [ref=e118]:
+          - generic [ref=e119]: ◆
+          - generic [ref=e120]: 🔥 ISTQB AI Testing course crosses 1,500 students in just 14 days — Surge in demand for Certs
+        - generic [ref=e121]:
+          - generic [ref=e122]: ◆
+          - generic [ref=e123]:
+            - text: "🎓 Limited-Time Access: Unlock 40+ QA & AI courses with"
+            - link "All-Access Membership" [ref=e124] [cursor=pointer]:
+              - /url: /all-access-subscription
+            - text: for just $129*
+        - generic [ref=e125]:
+          - generic [ref=e126]: ◆
+          - generic [ref=e127]: "📈 Playwright Surge is Real: Learning consumption has increased by 250%+ in the last quarter"
+        - generic [ref=e128]:
+          - generic [ref=e129]: ─ ─ ─ ─ ─
+          - generic [ref=e130]:
+            - text: 📬 That's all for now —
+            - link "Subscribe to our Newsletter" [ref=e131] [cursor=pointer]:
+              - /url: https://courses.rahulshettyacademy.com/sign_up
+            - text: and get updates like these once a month.
+    - main [ref=e132]:
+      - generic [ref=e137]:
+        - generic [ref=e138]:
+          - generic [ref=e139]: Trusted by 1 Million+ Students
+          - heading [level=1] [ref=e140]:
+            - text: An Academy toLearn & Shinein your
+            - generic [ref=e141]: QA/AI Career.
+          - paragraph [ref=e144]: World-class QA & AI courses are where it starts — but this is more than a course platform. Follow curated learning paths, sharpen your skills on real-world practice applications, join a mentor-led Job Ready Program, and let a skill-first hiring platform put your verified abilities in front of recruiters who are actively hiring.
+        - generic [ref=e145]:
+          - button "Explore Your Options" [ref=e146] [cursor=pointer]
+          - link "All Access Subscription" [ref=e147] [cursor=pointer]:
+            - /url: /all-access-subscription
+        - generic [ref=e148]:
+          - generic [ref=e149]:
+            - generic [ref=e150]: 1Million+
+            - generic [ref=e151]: Students
+          - generic [ref=e152]:
+            - generic [ref=e153]: "195"
+            - generic [ref=e154]: Countries
+          - generic [ref=e155]:
+            - generic [ref=e156]: 40+
+            - generic [ref=e157]: Courses
+          - generic [ref=e158]:
+            - generic [ref=e159]: 100%
+            - generic [ref=e160]: Job Ready
+      - generic [ref=e169]:
+        - generic [ref=e170]:
+          - heading "Ready to Transform Your QA Career?" [level=2] [ref=e171]
+          - paragraph [ref=e172]: Every stage of your QA journey has a home here — pick where you are and take the next step.
+        - generic [ref=e173]:
+          - link "QA Career Accelerator (Job-Oriented) From Learner to Hired in 60 Days Courses teach you the tools. The Job Ready Programme gets you the offer. A mentor-led, 3-phase journey with real project work, a 1:1 strategy session with Rahul, mock interviews, and direct visibility to recruiters who are actively hiring. Apply Now" [ref=e174] [cursor=pointer]:
+            - /url: /qa-career-accelerator-job-ready
+            - generic [ref=e175]:
+              - generic [ref=e183]:
+                - text: QA Career Accelerator
+                - generic [ref=e184]: (Job-Oriented)
+              - heading "From Learner to Hired in 60 Days" [level=3] [ref=e185]
+              - paragraph [ref=e186]: Courses teach you the tools. The Job Ready Programme gets you the offer. A mentor-led, 3-phase journey with real project work, a 1:1 strategy session with Rahul, mock interviews, and direct visibility to recruiters who are actively hiring.
+              - generic [ref=e187]: Apply Now
+          - link "All Access Subscription Content expert Unlock Every Course, Forever One investment. Every course — now and forever. Get unlimited lifetime access to all 40+ QA & AI courses, including every new course Rahul publishes. The smartest single move for your QA career. Get All-Access" [ref=e191] [cursor=pointer]:
+            - /url: /all-access-subscription
+            - generic [ref=e192]:
+              - generic [ref=e197]:
+                - text: All Access Subscription
+                - generic [ref=e198]: Content expert
+              - heading "Unlock Every Course, Forever" [level=3] [ref=e199]
+              - paragraph [ref=e200]: One investment. Every course — now and forever. Get unlimited lifetime access to all 40+ QA & AI courses, including every new course Rahul publishes. The smartest single move for your QA career.
+              - generic [ref=e201]: Get All-Access
+          - link "Learning Paths Curated Paths to Job-Readiness Skip the guesswork. Rahul Shetty has hand-picked and sequenced every course in these paths based on 15+ years of industry experience — so you build skills in the right order and arrive interview-ready. Explore Paths" [ref=e205] [cursor=pointer]:
+            - /url: /learning-paths
+            - generic [ref=e206]:
+              - generic [ref=e207]: Learning Paths
+              - heading "Curated Paths to Job-Readiness" [level=3] [ref=e214]
+              - paragraph [ref=e215]: Skip the guesswork. Rahul Shetty has hand-picked and sequenced every course in these paths based on 15+ years of industry experience — so you build skills in the right order and arrive interview-ready.
+              - generic [ref=e216]: Explore Paths
+          - link "Practice Projects Learn by Testing Real Applications Theory only takes you so far. Practise on live applications built to simulate the bugs, edge cases, and test scenarios you'll actually face on the job — so when you step into an interview or a new role, you're already battle-tested. Start Practising" [ref=e220] [cursor=pointer]:
+            - /url: /practice
+            - generic [ref=e221]:
+              - generic [ref=e222]: Practice Projects
+              - heading "Learn by Testing Real Applications" [level=3] [ref=e229]
+              - paragraph [ref=e230]: Theory only takes you so far. Practise on live applications built to simulate the bugs, edge cases, and test scenarios you'll actually face on the job — so when you step into an interview or a new role, you're already battle-tested.
+              - generic [ref=e231]: Start Practising
+          - link "1:1 Mentorship Direct Guidance from Rahul Skip the generic advice. Get one-on-one time with Rahul Shetty — whether you're navigating a career pivot, stuck on a specific skill, or need a clear plan to reach your next role. Personalised strategy, not recycled answers. Book a Session" [ref=e235] [cursor=pointer]:
+            - /url: /mentorship
+            - generic [ref=e236]:
+              - generic [ref=e237]: 1:1 Mentorship
+              - heading "Direct Guidance from Rahul" [level=3] [ref=e244]
+              - paragraph [ref=e245]: Skip the generic advice. Get one-on-one time with Rahul Shetty — whether you're navigating a career pivot, stuck on a specific skill, or need a clear plan to reach your next role. Personalised strategy, not recycled answers.
+              - generic [ref=e246]: Book a Session
+          - link "Interview Prep Library Walk Into Interviews Fully Prepared Browse our free, growing library of real QA & Automation interview questions — Playwright, Python, API Testing, Behavioural, Coding Rounds, and more — with elaborated answers and working code. Everything you need to become the QA Automation Engineer companies want to hire. Browse Interview Questions New" [ref=e250] [cursor=pointer]:
+            - /url: /interview-questions
+            - generic [ref=e251]:
+              - generic [ref=e252]: Interview Prep Library
+              - heading "Walk Into Interviews Fully Prepared" [level=3] [ref=e258]
+              - paragraph [ref=e259]: Browse our free, growing library of real QA & Automation interview questions — Playwright, Python, API Testing, Behavioural, Coding Rounds, and more — with elaborated answers and working code. Everything you need to become the QA Automation Engineer companies want to hire.
+              - generic [ref=e260]: Browse Interview Questions
+              - generic [ref=e263]: New
+        - generic [ref=e268]: Or go all-in
+        - generic [ref=e272]:
+          - generic [ref=e273]: Featured Deal
+          - generic [ref=e277]:
+            - generic [ref=e278]:
+              - heading "All-Access Membership" [level=3] [ref=e279]
+              - paragraph [ref=e280]:
+                - text: One investment. Every course — now and forever. Get unlimited lifetime access to
+                - strong [ref=e281]: all 40+ QA & AI courses
+                - text: ", including every new course Rahul publishes. The smartest single move you can make for your QA career."
+              - generic [ref=e282]:
+                - generic [ref=e283]:
+                  - generic [ref=e286]: "4.8"
+                  - generic [ref=e287]: (50k+ reviews)
+                - generic [ref=e288]: 500k+ students
+                - generic [ref=e295]: Lifetime access
+              - generic [ref=e300]:
+                - generic [ref=e301]: $129*
+                - generic [ref=e302]: $499
+                - generic [ref=e303]: 80% OFF
+              - paragraph [ref=e304]: "*Starting from — final price may vary by package selection/region"
+              - button "Learn More" [ref=e306] [cursor=pointer]
+            - img "All-Access Membership Badge" [ref=e308]
+      - generic [ref=e310]:
+        - generic [ref=e311]:
+          - heading "Meet Your Instructor" [level=2] [ref=e312]
+          - paragraph [ref=e313]: Learn from one of the world's most recognized QA Automation experts
+        - generic [ref=e317]:
+          - generic [ref=e318]:
+            - img "Rahul Shetty" [ref=e320]
+            - generic [ref=e321]:
+              - link "LinkedIn" [ref=e322] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/rahul-shetty-venkatesh/
+              - link "Udemy Portfolio" [ref=e328] [cursor=pointer]:
+                - /url: https://www.udemy.com/user/rahul445
+              - link "TechSmartHire" [ref=e333] [cursor=pointer]:
+                - /url: https://techsmarthire.com
+              - link "YouTube" [ref=e338] [cursor=pointer]:
+                - /url: https://www.youtube.com/@RahulShettyAcademy
+              - link "Instagram" [ref=e343] [cursor=pointer]:
+                - /url: https://www.instagram.com/rahulshettyacademy_qa/
+          - generic [ref=e349]:
+            - heading "Rahul Shetty" [level=3] [ref=e350]
+            - paragraph [ref=e351]: QA Instructor | Founder of Rahul Shetty Academy, QASummit & TechSmartHire
+            - generic [ref=e352]:
+              - generic [ref=e353]:
+                - generic [ref=e354]: 1M+
+                - generic [ref=e355]: Students
+              - generic [ref=e356]:
+                - generic [ref=e357]: 30+
+                - generic [ref=e358]: Courses
+              - generic [ref=e359]:
+                - generic [ref=e360]: "4.6"
+                - generic [ref=e361]: Avg Rating
+              - generic [ref=e362]:
+                - generic [ref=e363]: "195"
+                - generic [ref=e364]: Countries
+            - paragraph [ref=e365]: "Rahul Shetty (aka Venkatesh) is one of Udemy's most successful QA instructors, with over 1 million students from 195 countries and 30+ courses spanning Selenium, Playwright, AI Testing, Postman, Cypress, Appium, and more. His teaching style — practical, no-fluff, real-world — has made him the go-to name for QA professionals at every stage of their career. Beyond online learning, Rahul organises QASummit — a series of successful international QA conferences that equip thousands of QA professionals with the latest skills every quarter. He also co-founded TechSmartHire — a skill-based hiring platform that connects verified QA professionals directly with recruiters based on demonstrated competency, not just credentials. His mission: not just to train QA professionals, but to get them hired."
+            - generic [ref=e366]:
+              - generic [ref=e367]: Founder of Rahul Shetty Academy — leading EdTech platform for QA training globally
+              - generic [ref=e372]: Co-founder of TechSmartHire — skill-based platform connecting QA talent with top recruiters
+              - generic [ref=e377]: Organizer of QASummit — international QA conferences upskilling thousands every quarter
+              - generic [ref=e382]: 15+ years of industry experience in QA & Test Automation
+              - generic [ref=e387]: Trained 1M+ QA professionals across 195 countries
+      - generic [ref=e392]:
+        - generic [ref=e394]:
+          - generic [ref=e395]: Success Stories
+          - heading "Learner success stories" [level=2] [ref=e396]
+          - paragraph [ref=e397]: Real outcomes from real learners worldwide.
+        - generic [ref=e399]:
+          - generic [ref=e400]:
+            - paragraph [ref=e416]: "\"Rahul's courses completely transformed my career. The practical approach and real-world projects helped me land my dream job at Microsoft. The AI testing module was particularly impressive!\""
+            - generic [ref=e417]:
+              - paragraph [ref=e418]: Sarah Johnson
+              - paragraph [ref=e419]: QA Engineer at Microsoft
+          - generic [ref=e420]:
+            - paragraph [ref=e436]: "\"Best investment I've made for my career. The Selenium and Playwright courses are incredibly detailed. Went from manual testing to automation lead in 6 months!\""
+            - generic [ref=e437]:
+              - paragraph [ref=e438]: Michael Chen
+              - paragraph [ref=e439]: Senior Test Automation Engineer
+          - generic [ref=e440]:
+            - paragraph [ref=e456]: "\"The comprehensive curriculum and lifetime access made all the difference. I now manage a team of 15 QA engineers. Thank you for the excellent training!\""
+            - generic [ref=e457]:
+              - paragraph [ref=e458]: Priya Sharma
+              - paragraph [ref=e459]: QA Manager at Amazon
+          - generic [ref=e460]:
+            - paragraph [ref=e476]: "\"Rahul's teaching style is exceptional. The API testing and performance testing modules helped me transition to a Test Architect role. Highly recommend!\""
+            - generic [ref=e477]:
+              - paragraph [ref=e478]: David Wilson
+              - paragraph [ref=e479]: Test Architect at Google
+          - generic [ref=e480]:
+            - paragraph [ref=e496]: "\"The courses are updated regularly with latest technologies. Started my own QA consulting business after completing the full stack testing program.\""
+            - generic [ref=e497]:
+              - paragraph [ref=e498]: Lisa Rodriguez
+              - paragraph [ref=e499]: Senior QA Consultant
+          - generic [ref=e500]:
+            - paragraph [ref=e516]: "\"From zero to hero in automation testing. The mentorship program was invaluable. Now leading automation initiatives at Netflix!\""
+            - generic [ref=e517]:
+              - paragraph [ref=e518]: Ahmed Hassan
+              - paragraph [ref=e519]: Lead QA Engineer at Netflix
+          - generic [ref=e520]:
+            - paragraph [ref=e536]: "\"Rahul's courses completely transformed my career. The practical approach and real-world projects helped me land my dream job at Microsoft. The AI testing module was particularly impressive!\""
+            - generic [ref=e537]:
+              - paragraph [ref=e538]: Sarah Johnson
+              - paragraph [ref=e539]: QA Engineer at Microsoft
+          - generic [ref=e540]:
+            - paragraph [ref=e556]: "\"Best investment I've made for my career. The Selenium and Playwright courses are incredibly detailed. Went from manual testing to automation lead in 6 months!\""
+            - generic [ref=e557]:
+              - paragraph [ref=e558]: Michael Chen
+              - paragraph [ref=e559]: Senior Test Automation Engineer
+          - generic [ref=e560]:
+            - paragraph [ref=e576]: "\"The comprehensive curriculum and lifetime access made all the difference. I now manage a team of 15 QA engineers. Thank you for the excellent training!\""
+            - generic [ref=e577]:
+              - paragraph [ref=e578]: Priya Sharma
+              - paragraph [ref=e579]: QA Manager at Amazon
+          - generic [ref=e580]:
+            - paragraph [ref=e596]: "\"Rahul's teaching style is exceptional. The API testing and performance testing modules helped me transition to a Test Architect role. Highly recommend!\""
+            - generic [ref=e597]:
+              - paragraph [ref=e598]: David Wilson
+              - paragraph [ref=e599]: Test Architect at Google
+          - generic [ref=e600]:
+            - paragraph [ref=e616]: "\"The courses are updated regularly with latest technologies. Started my own QA consulting business after completing the full stack testing program.\""
+            - generic [ref=e617]:
+              - paragraph [ref=e618]: Lisa Rodriguez
+              - paragraph [ref=e619]: Senior QA Consultant
+          - generic [ref=e620]:
+            - paragraph [ref=e636]: "\"From zero to hero in automation testing. The mentorship program was invaluable. Now leading automation initiatives at Netflix!\""
+            - generic [ref=e637]:
+              - paragraph [ref=e638]: Ahmed Hassan
+              - paragraph [ref=e639]: Lead QA Engineer at Netflix
+      - generic [ref=e642]:
+        - generic [ref=e643]: Exclusive Academy Access
+        - heading "JOIN OUR ACADEMY" [level=2] [ref=e646]
+        - paragraph [ref=e647]: Get access to exclusive monthly QA newsletter covering the latest QA & AI testing trends, job openings, new course offerings, and practice projects — completely free when you sign up.
+        - paragraph [ref=e648]: Oh, and you also get 2 premium courses for free for a limited time. Just search for below titles after signing up and enroll right away — no payment needed.
+        - generic [ref=e649]:
+          - generic [ref=e650]: Java Design Patterns for Test Framework
+          - generic [ref=e654]: SDET/QA Automation Interview Kit + Java Logic Programs
+        - generic [ref=e659]:
+          - link "JOIN NOW - FREE ACCESS" [ref=e660] [cursor=pointer]:
+            - /url: https://courses.rahulshettyacademy.com/sign_up
+          - paragraph [ref=e661]: Limited time offer - Usually $197, now FREE!
+    - generic [ref=e665]:
+      - generic [ref=e666]:
+        - heading "Frequently Asked Questions" [level=2] [ref=e667]
+        - paragraph [ref=e668]: Find answers to common questions about our platform and courses
+      - generic [ref=e671]:
+        - heading [level=3] [ref=e673]:
+          - button "What does Rahul Shetty Academy offer?" [ref=e674] [cursor=pointer]
+        - heading [level=3] [ref=e679]:
+          - button "Who is Rahul Shetty?" [ref=e680] [cursor=pointer]
+        - heading [level=3] [ref=e685]:
+          - button "Are these courses good for beginners?" [ref=e686] [cursor=pointer]
+        - heading [level=3] [ref=e691]:
+          - button "Do I get certificates after completing courses?" [ref=e692] [cursor=pointer]
+        - heading [level=3] [ref=e697]:
+          - button "How do I enroll in a course?" [ref=e698] [cursor=pointer]
+        - heading [level=3] [ref=e703]:
+          - button "Is content available on mobile devices?" [ref=e704] [cursor=pointer]
+        - heading [level=3] [ref=e709]:
+          - button "What topics are covered?" [ref=e710] [cursor=pointer]
+        - heading [level=3] [ref=e715]:
+          - button "Is there community support?" [ref=e716] [cursor=pointer]
+    - contentinfo [ref=e720]:
+      - generic [ref=e721]:
+        - generic [ref=e722]:
+          - generic [ref=e723]:
+            - generic [ref=e724]:
+              - heading "RAHUL SHETTY" [level=3] [ref=e725]
+              - paragraph [ref=e726]: Transforming careers through comprehensive QA testing education. Join 1M+ learners worldwide.
+            - link "Contact Us" [ref=e727] [cursor=pointer]:
+              - /url: /contact-us
+            - generic [ref=e731]:
+              - heading "Connect us on Socials" [level=4] [ref=e732]
+              - generic [ref=e733]:
+                - link [ref=e734] [cursor=pointer]:
+                  - /url: https://www.youtube.com/channel/UCgx5SDcUQWCQ_1CNneQzCRw
+                - link [ref=e738] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/in/rahul-shetty-venkatesh/
+                - link [ref=e743] [cursor=pointer]:
+                  - /url: https://www.instagram.com/rahulshettyofficial_venkat/
+          - generic [ref=e747]:
+            - heading "Navigation" [level=4] [ref=e748]
+            - generic [ref=e749]:
+              - link "All-Access" [ref=e750] [cursor=pointer]:
+                - /url: /all-access-subscription
+              - link "Learning Paths" [ref=e751] [cursor=pointer]:
+                - /url: /learning-paths
+              - link "Mentorship" [ref=e752] [cursor=pointer]:
+                - /url: /mentorship
+              - link "Career Accelerator" [ref=e753] [cursor=pointer]:
+                - /url: /qa-career-accelerator-job-ready
+              - link "Team Accelerator" [ref=e754] [cursor=pointer]:
+                - /url: /qa-career-accelerator-for-teams
+              - link "AI Learning PathNEW" [ref=e755] [cursor=pointer]:
+                - /url: /ai-learning-path
+              - link "Practice" [ref=e756] [cursor=pointer]:
+                - /url: /practice
+              - link "Meet ups" [ref=e757] [cursor=pointer]:
+                - /url: https://qasummit.org
+              - link "Blog" [ref=e758] [cursor=pointer]:
+                - /url: https://rahulshettyacademy.com/blog/
+              - link "Contact Us" [ref=e759] [cursor=pointer]:
+                - /url: /contact-us
+          - generic [ref=e760]:
+            - heading "Popular Courses" [level=4] [ref=e761]
+            - generic [ref=e762]:
+              - link "Selenium WebDriver" [ref=e763] [cursor=pointer]:
+                - /url: https://courses.rahulshettyacademy.com/p/selenium-webdriver-interview-questions-tutorial-1
+              - link "Playwright Testing" [ref=e764] [cursor=pointer]:
+                - /url: https://courses.rahulshettyacademy.com/p/playwright-js-ts-automation-testing-from-scratch-framework
+              - link "API Testing" [ref=e765] [cursor=pointer]:
+                - /url: https://courses.rahulshettyacademy.com/p/rest-api-automation-rest-assured-java
+              - link "AI Agents" [ref=e766] [cursor=pointer]:
+                - /url: https://courses.rahulshettyacademy.com/p/learn-agentic-ai-build-multi-agent-automation-workflow
+              - link "AI Testing Tools" [ref=e767] [cursor=pointer]:
+                - /url: https://courses.rahulshettyacademy.com/p/learn-generativen-ai-in-software-testing
+              - link "Browse All Courses" [ref=e768] [cursor=pointer]:
+                - /url: https://courses.rahulshettyacademy.com/courses
+          - generic [ref=e769]:
+            - heading "Support" [level=4] [ref=e770]
+            - generic [ref=e771]:
+              - link "Student Login" [ref=e772] [cursor=pointer]:
+                - /url: https://courses.rahulshettyacademy.com/sign_in
+              - link "Contact Us" [ref=e773] [cursor=pointer]:
+                - /url: /contact-us
+              - link "Help Center" [ref=e774] [cursor=pointer]:
+                - /url: "#"
+              - link "Community" [ref=e775] [cursor=pointer]:
+                - /url: "#"
+              - link "Terms of Service" [ref=e776] [cursor=pointer]:
+                - /url: /terms-of-service
+              - link "Privacy Policy" [ref=e777] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e779]:
+          - generic [ref=e780]:
+            - paragraph [ref=e781]: © 2026 Rahul Shetty Academy. All rights reserved.
+            - generic [ref=e782]: •
+            - generic [ref=e783]: Built with ♥ for testers worldwide.
+          - generic [ref=e785]:
+            - generic [ref=e786]: contact@rahulshettyacademy.com
+            - generic [ref=e787]: Trusted by 1M+ QA Engineers

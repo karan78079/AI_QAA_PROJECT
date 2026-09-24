@@ -1,0 +1,597 @@
+- generic [ref=f5e2]:
+  - region "Notifications (F8)":
+    - list
+  - region "Notifications alt+T"
+  - generic:
+    - generic:
+      - generic:
+        - generic:
+          - generic: Limited Time — Free
+          - button "Dismiss popup"
+        - generic:
+          - heading "Join Our Academy & Unlock 2 Premium Courses — FREE" [level=3]: Join Our Academy & Unlock2 Premium Courses — FREE
+          - paragraph: Sign up once. No credit card. Instant access.
+        - list:
+          - listitem:
+            - generic: Java Design Patterns for Test Framework
+          - listitem:
+            - generic: SDET/QA Automation Interview Kit + Java Logic Programs
+        - link "Sign Up Free →":
+          - /url: https://courses.rahulshettyacademy.com/sign_up
+        - paragraph: Usually $197 · Now completely FREE
+  - generic [ref=f5e3]:
+    - navigation [ref=f5e4]:
+      - generic [ref=f5e6]:
+        - link [ref=f5e8] [cursor=pointer]:
+          - /url: /
+          - img "Rahul Shetty Academy" [ref=f5e9]
+        - generic [ref=f5e10]:
+          - link "Home" [ref=f5e11] [cursor=pointer]:
+            - /url: /
+          - link "All-Access" [ref=f5e15] [cursor=pointer]:
+            - /url: /all-access-subscription
+          - link "Learning Paths" [ref=f5e18] [cursor=pointer]:
+            - /url: /learning-paths
+          - link "Courses" [ref=f5e23] [cursor=pointer]:
+            - /url: /course-library
+          - link "Mentorship" [ref=f5e26] [cursor=pointer]:
+            - /url: /mentorship
+          - button "Career Accelerator (Job/Skill-Oriented) NEW" [ref=f5e32] [cursor=pointer]:
+            - generic [ref=f5e36]:
+              - generic [ref=f5e37]: Career Accelerator
+              - generic [ref=f5e40]: (Job/Skill-Oriented)
+            - generic [ref=f5e41]: NEW
+          - link "Practice Apps" [ref=f5e42] [cursor=pointer]:
+            - /url: /practice
+        - generic [ref=f5e47]:
+          - link "Contact Us" [ref=f5e48] [cursor=pointer]:
+            - /url: /contact-us
+          - button "Resources" [ref=f5e52] [cursor=pointer]
+          - link "Sign Up" [ref=f5e60] [cursor=pointer]:
+            - /url: https://courses.rahulshettyacademy.com/sign_up
+    - generic [ref=f5e61]:
+      - generic [ref=f5e62]: Latest
+      - generic [ref=f5e71]:
+        - generic [ref=f5e72]:
+          - generic [ref=f5e73]: ◆
+          - generic [ref=f5e74]:
+            - text: "🎤 New: QA Career Guidance Talk by Rahul Shetty — 3 hours of career strategy, AI era frameworks, and a 2026 roadmap."
+            - link "Watch Now" [ref=f5e75] [cursor=pointer]:
+              - /url: /qa-career-guidance-talk
+        - generic [ref=f5e76]:
+          - generic [ref=f5e77]: ◆
+          - generic [ref=f5e78]: "🚀 Just Released: New K6 Performance Testing Masterclass is now live- Checkout in Course library"
+        - generic [ref=f5e79]:
+          - generic [ref=f5e80]: ◆
+          - generic [ref=f5e81]:
+            - text: "💼 Get Shortlisted by Recruiters: Take QA skill assessments on"
+            - link "TechSmartHire" [ref=f5e82] [cursor=pointer]:
+              - /url: https://techsmarthire.com
+            - text: and unlock real job opportunities
+        - generic [ref=f5e83]:
+          - generic [ref=f5e84]: ◆
+          - generic [ref=f5e85]:
+            - text: "🧪 New Automation Playground: Practice Web & API Automation on our"
+            - link "Full Stack Event Hub demo application" [ref=f5e86] [cursor=pointer]:
+              - /url: https://eventhub.rahulshettyacademy.com/
+        - generic [ref=f5e87]:
+          - generic [ref=f5e88]: ◆
+          - generic [ref=f5e89]: "🤖 Agentic AI is here: Claude Code-powered QA workflows now covered in the Gen AI & AI Agents Testing course — watch the new additions."
+        - generic [ref=f5e90]:
+          - generic [ref=f5e91]: ◆
+          - generic [ref=f5e92]: 🔥 ISTQB AI Testing course crosses 1,500 students in just 14 days — Surge in demand for Certs
+        - generic [ref=f5e93]:
+          - generic [ref=f5e94]: ◆
+          - generic [ref=f5e95]:
+            - text: "🎓 Limited-Time Access: Unlock 40+ QA & AI courses with"
+            - link "All-Access Membership" [ref=f5e96] [cursor=pointer]:
+              - /url: /all-access-subscription
+            - text: for just $129*
+        - generic [ref=f5e97]:
+          - generic [ref=f5e98]: ◆
+          - generic [ref=f5e99]: "📈 Playwright Surge is Real: Learning consumption has increased by 250%+ in the last quarter"
+        - generic [ref=f5e100]:
+          - generic [ref=f5e101]: ─ ─ ─ ─ ─
+          - generic [ref=f5e102]:
+            - text: 📬 That's all for now —
+            - link "Subscribe to our Newsletter" [ref=f5e103] [cursor=pointer]:
+              - /url: https://courses.rahulshettyacademy.com/sign_up
+            - text: and get updates like these once a month.
+        - generic [ref=f5e104]:
+          - generic [ref=f5e105]: ◆
+          - generic [ref=f5e106]:
+            - text: "🎤 New: QA Career Guidance Talk by Rahul Shetty — 3 hours of career strategy, AI era frameworks, and a 2026 roadmap."
+            - link "Watch Now" [ref=f5e107] [cursor=pointer]:
+              - /url: /qa-career-guidance-talk
+        - generic [ref=f5e108]:
+          - generic [ref=f5e109]: ◆
+          - generic [ref=f5e110]: "🚀 Just Released: New K6 Performance Testing Masterclass is now live- Checkout in Course library"
+        - generic [ref=f5e111]:
+          - generic [ref=f5e112]: ◆
+          - generic [ref=f5e113]:
+            - text: "💼 Get Shortlisted by Recruiters: Take QA skill assessments on"
+            - link "TechSmartHire" [ref=f5e114] [cursor=pointer]:
+              - /url: https://techsmarthire.com
+            - text: and unlock real job opportunities
+        - generic [ref=f5e115]:
+          - generic [ref=f5e116]: ◆
+          - generic [ref=f5e117]:
+            - text: "🧪 New Automation Playground: Practice Web & API Automation on our"
+            - link "Full Stack Event Hub demo application" [ref=f5e118] [cursor=pointer]:
+              - /url: https://eventhub.rahulshettyacademy.com/
+        - generic [ref=f5e119]:
+          - generic [ref=f5e120]: ◆
+          - generic [ref=f5e121]: "🤖 Agentic AI is here: Claude Code-powered QA workflows now covered in the Gen AI & AI Agents Testing course — watch the new additions."
+        - generic [ref=f5e122]:
+          - generic [ref=f5e123]: ◆
+          - generic [ref=f5e124]: 🔥 ISTQB AI Testing course crosses 1,500 students in just 14 days — Surge in demand for Certs
+        - generic [ref=f5e125]:
+          - generic [ref=f5e126]: ◆
+          - generic [ref=f5e127]:
+            - text: "🎓 Limited-Time Access: Unlock 40+ QA & AI courses with"
+            - link "All-Access Membership" [ref=f5e128] [cursor=pointer]:
+              - /url: /all-access-subscription
+            - text: for just $129*
+        - generic [ref=f5e129]:
+          - generic [ref=f5e130]: ◆
+          - generic [ref=f5e131]: "📈 Playwright Surge is Real: Learning consumption has increased by 250%+ in the last quarter"
+        - generic [ref=f5e132]:
+          - generic [ref=f5e133]: ─ ─ ─ ─ ─
+          - generic [ref=f5e134]:
+            - text: 📬 That's all for now —
+            - link "Subscribe to our Newsletter" [ref=f5e135] [cursor=pointer]:
+              - /url: https://courses.rahulshettyacademy.com/sign_up
+            - text: and get updates like these once a month.
+    - generic [ref=f5e139]:
+      - generic [ref=f5e140]: Practice Makes Perfect
+      - heading "Master QA Testing Through Practice" [level=1] [ref=f5e141]
+      - paragraph [ref=f5e142]: Access 15+ real-world practice applications designed by industry experts. Transform your theoretical knowledge into job-ready automation skills.
+      - generic [ref=f5e143]:
+        - generic [ref=f5e144]:
+          - generic [ref=f5e145]: 500K+
+          - generic [ref=f5e146]: Students Practising
+        - generic [ref=f5e147]:
+          - generic [ref=f5e148]: 15+
+          - generic [ref=f5e149]: Practice Apps
+        - generic [ref=f5e150]:
+          - generic [ref=f5e151]: "4.8"
+          - generic [ref=f5e152]: Avg Rating
+      - button "Browse Practice sites & Interview Library" [ref=f5e153] [cursor=pointer]
+    - generic [ref=f5e154]:
+      - heading "Pick Your Practice App" [level=2] [ref=f5e156]
+      - tablist [ref=f5e159]:
+        - tab "All Categories" [selected] [ref=f5e160] [cursor=pointer]
+        - tab "Web Automation" [ref=f5e161] [cursor=pointer]
+        - tab "API Testing" [ref=f5e162] [cursor=pointer]
+        - tab "Mobile Apps" [ref=f5e163] [cursor=pointer]
+        - tab "RAG LLM" [ref=f5e164] [cursor=pointer]
+        - tab "Interview Questions New" [ref=f5e165] [cursor=pointer]:
+          - generic [ref=f5e169]: Interview Questions
+          - generic [ref=f5e170]: New
+      - generic [ref=f5e171]:
+        - generic [ref=f5e172]:
+          - generic [ref=f5e173]:
+            - img "EventHub" [ref=f5e174]
+            - generic [ref=f5e176]: New
+          - generic [ref=f5e178]:
+            - generic [ref=f5e179]:
+              - heading "EventHub" [level=3] [ref=f5e180]
+              - paragraph [ref=f5e181]: Web Automation
+            - paragraph [ref=f5e182]: Event discovery and ticket booking platform for practicing end-to-end automation — search, filtering, multi-step booking flows, form validation, and dynamic content handling.
+            - button "Start Practicing" [ref=f5e183] [cursor=pointer]
+        - generic [ref=f5e186]:
+          - img "Client Dashboard" [ref=f5e188]
+          - generic [ref=f5e190]:
+            - generic [ref=f5e191]:
+              - heading "Client Dashboard" [level=3] [ref=f5e192]
+              - paragraph [ref=f5e193]: Web Automation
+            - paragraph [ref=f5e194]: Professional client management dashboard for practicing complex workflows, data tables, and multi-step processes.
+            - button "Start Practicing" [ref=f5e195] [cursor=pointer]
+        - generic [ref=f5e198]:
+          - generic [ref=f5e199]:
+            - img "Selenium Practice - GreenKart" [ref=f5e200]
+            - generic [ref=f5e202]: Most Popular
+          - generic [ref=f5e204]:
+            - generic [ref=f5e205]:
+              - heading "Selenium Practice - GreenKart" [level=3] [ref=f5e206]
+              - paragraph [ref=f5e207]: Web Automation
+            - paragraph [ref=f5e208]: E-commerce website simulation for practicing Selenium WebDriver automation with shopping cart, checkout, and payment flows.
+            - button "Start Practicing" [ref=f5e209] [cursor=pointer]
+        - generic [ref=f5e212]:
+          - img "AutomationPractice Portal" [ref=f5e214]
+          - generic [ref=f5e216]:
+            - generic [ref=f5e217]:
+              - heading "AutomationPractice Portal" [level=3] [ref=f5e218]
+              - paragraph [ref=f5e219]: Web Automation
+            - paragraph [ref=f5e220]: Comprehensive practice site with forms, dropdowns, checkboxes, alerts, and various UI components for complete automation testing.
+            - button "Start Practicing" [ref=f5e221] [cursor=pointer]
+        - generic [ref=f5e224]:
+          - generic [ref=f5e225]:
+            - generic [ref=f5e226]:
+              - generic [ref=f5e227]:
+                - generic [ref=f5e228]: ⬡
+                - generic [ref=f5e229]: Swagger UI · EventHub API
+              - generic [ref=f5e230]:
+                - generic [ref=f5e231]: GET
+                - generic [ref=f5e232]: /api/events
+              - generic [ref=f5e233]:
+                - generic [ref=f5e234]: POST
+                - generic [ref=f5e235]: /api/bookings
+              - generic [ref=f5e236]:
+                - generic [ref=f5e237]: GET
+                - generic [ref=f5e238]: "/api/events/{id}"
+              - generic [ref=f5e239]:
+                - generic [ref=f5e240]: DELETE
+                - generic [ref=f5e241]: "/api/bookings/{id}"
+              - generic [ref=f5e242]: Interactive · Try it out
+            - generic [ref=f5e245]: New
+          - generic [ref=f5e247]:
+            - generic [ref=f5e248]:
+              - heading "EventHub API" [level=3] [ref=f5e249]
+              - paragraph [ref=f5e250]: API Testing
+            - paragraph [ref=f5e251]: REST API for the EventHub platform — practice testing event listings, bookings, and user flows via an interactive Swagger UI with full request/response validation.
+            - button "Start Practicing" [ref=f5e252] [cursor=pointer]
+        - generic [ref=f5e255]:
+          - generic [ref=f5e257]:
+            - generic [ref=f5e258]:
+              - generic [ref=f5e259]: 📚
+              - generic [ref=f5e260]: Library Management API
+            - generic [ref=f5e261]:
+              - generic [ref=f5e262]: POST
+              - generic [ref=f5e263]: /api/addBook
+              - generic [ref=f5e264]: 201 Created
+            - generic [ref=f5e265]:
+              - generic [ref=f5e266]: GET
+              - generic [ref=f5e267]: /api/getBooks
+              - generic [ref=f5e268]: 200 OK
+            - generic [ref=f5e269]:
+              - generic [ref=f5e270]: PUT
+              - generic [ref=f5e271]: /api/updateBook
+              - generic [ref=f5e272]: 200 OK
+            - generic [ref=f5e273]:
+              - generic [ref=f5e274]: DELETE
+              - generic [ref=f5e275]: /api/deleteBook
+              - generic [ref=f5e276]: 204 No Content
+          - generic [ref=f5e277]:
+            - generic [ref=f5e278]:
+              - heading "Library Management System" [level=3] [ref=f5e279]
+              - paragraph [ref=f5e280]: API Testing
+            - paragraph [ref=f5e281]: Digital library platform for practicing CRUD operations, search functionality, and database-driven automation scenarios.
+            - button "Start Practicing" [ref=f5e282] [cursor=pointer]
+        - generic [ref=f5e285]:
+          - img "Login Page Practice" [ref=f5e287]
+          - generic [ref=f5e289]:
+            - generic [ref=f5e290]:
+              - heading "Login Page Practice" [level=3] [ref=f5e291]
+              - paragraph [ref=f5e292]: Web Automation
+            - paragraph [ref=f5e293]: Authentication-focused practice site for testing login scenarios, error handling, and session management automation.
+            - button "Start Practicing" [ref=f5e294] [cursor=pointer]
+        - generic [ref=f5e297]:
+          - img "Dropdowns Practice" [ref=f5e299]
+          - generic [ref=f5e301]:
+            - generic [ref=f5e302]:
+              - heading "Dropdowns Practice" [level=3] [ref=f5e303]
+              - paragraph [ref=f5e304]: Web Automation
+            - paragraph [ref=f5e305]: Specialized practice site focusing on various dropdown types including static, dynamic, auto-suggest, and multi-select dropdowns.
+            - button "Start Practicing" [ref=f5e306] [cursor=pointer]
+        - generic [ref=f5e309]:
+          - generic [ref=f5e310]:
+            - img "Locators Practice" [ref=f5e311]
+            - generic [ref=f5e313]: Essential
+          - generic [ref=f5e315]:
+            - generic [ref=f5e316]:
+              - heading "Locators Practice" [level=3] [ref=f5e317]
+              - paragraph [ref=f5e318]: Web Automation
+            - paragraph [ref=f5e319]: Essential practice platform for mastering different locator strategies including XPath, CSS selectors, and element identification techniques.
+            - button "Start Practicing" [ref=f5e320] [cursor=pointer]
+        - generic [ref=f5e323]:
+          - img "Angular Practice App" [ref=f5e325]
+          - generic [ref=f5e327]:
+            - generic [ref=f5e328]:
+              - heading "Angular Practice App" [level=3] [ref=f5e329]
+              - paragraph [ref=f5e330]: Web Automation
+            - paragraph [ref=f5e331]: Modern Angular application for practicing advanced automation scenarios with dynamic content, forms, and SPA navigation.
+            - button "Start Practicing" [ref=f5e332] [cursor=pointer]
+        - generic [ref=f5e335]:
+          - generic [ref=f5e337]:
+            - generic [ref=f5e338]:
+              - generic [ref=f5e339]: 📍
+              - generic [ref=f5e340]: Maps Integration API
+            - generic [ref=f5e341]: GET /api/maps/location
+            - generic [ref=f5e342]: "{"
+            - generic [ref=f5e343]:
+              - generic [ref=f5e344]: "\"lat\": 37.7749,"
+              - generic [ref=f5e345]: "\"lng\": -122.4194,"
+              - generic [ref=f5e346]: "\"zoom\": 13,"
+              - generic [ref=f5e347]: "\"type\": \"roadmap\""
+            - generic [ref=f5e348]: "}"
+          - generic [ref=f5e349]:
+            - generic [ref=f5e350]:
+              - heading "Maps Integration" [level=3] [ref=f5e351]
+              - paragraph [ref=f5e352]: API Testing
+            - paragraph [ref=f5e353]: Interactive maps application for practicing location-based testing, geolocation APIs, and map component automation.
+            - button "Start Practicing" [ref=f5e354] [cursor=pointer]
+        - generic [ref=f5e357]:
+          - generic [ref=f5e359]:
+            - generic [ref=f5e360]:
+              - generic [ref=f5e361]: 🔑
+              - generic [ref=f5e362]: OAuth 2.0 Authentication
+            - generic [ref=f5e363]: Authorization Header
+            - generic [ref=f5e364]: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIi...
+            - generic [ref=f5e366]: "grant_type: authorization_code"
+            - generic [ref=f5e367]:
+              - generic [ref=f5e368]: 🔒
+              - generic [ref=f5e369]: Token Verified · TTL 3600s
+          - generic [ref=f5e370]:
+            - generic [ref=f5e371]:
+              - heading "OAuth API Practice" [level=3] [ref=f5e372]
+              - paragraph [ref=f5e373]: API Testing
+            - paragraph [ref=f5e374]: OAuth authentication and authorization practice platform for API security testing and token-based authentication scenarios.
+            - button "Start Practicing" [ref=f5e375] [cursor=pointer]
+        - generic [ref=f5e378]:
+          - generic [ref=f5e379]:
+            - generic [ref=f5e380]:
+              - generic [ref=f5e381]:
+                - generic [ref=f5e382]: 🤖
+                - generic [ref=f5e383]: RAG Pipeline · LLM App
+              - generic [ref=f5e384]:
+                - generic [ref=f5e385]: Query
+                - generic [ref=f5e386]: →
+                - generic [ref=f5e387]: "\"What is Playwright?\""
+              - generic [ref=f5e388]:
+                - generic [ref=f5e389]: Embed
+                - generic [ref=f5e390]: →
+                - generic [ref=f5e391]: "[0.23, −0.11, 0.87…]"
+              - generic [ref=f5e392]:
+                - generic [ref=f5e393]: Retrieve
+                - generic [ref=f5e394]: →
+                - generic [ref=f5e395]: 3 context chunks found
+              - generic [ref=f5e396]:
+                - generic [ref=f5e397]: Generate
+                - generic [ref=f5e398]: →
+                - generic [ref=f5e399]: LLM response ✓
+              - generic [ref=f5e400]: Vector DB · Embeddings · LLM
+            - generic [ref=f5e403]: New
+          - generic [ref=f5e405]:
+            - generic [ref=f5e406]:
+              - heading "RAG UI Application" [level=3] [ref=f5e407]
+              - paragraph [ref=f5e408]: RAG LLM
+            - paragraph [ref=f5e409]: Retrieval-Augmented Generation interface for practicing AI-powered applications and modern web component automation.
+            - button "Start Practicing" [ref=f5e410] [cursor=pointer]
+        - generic [ref=f5e413]:
+          - img "Upload Download Test" [ref=f5e415]
+          - generic [ref=f5e417]:
+            - generic [ref=f5e418]:
+              - heading "Upload Download Test" [level=3] [ref=f5e419]
+              - paragraph [ref=f5e420]: Web Automation
+            - paragraph [ref=f5e421]: File handling practice platform for testing upload, download, and file management automation scenarios.
+            - button "Start Practicing" [ref=f5e422] [cursor=pointer]
+        - generic [ref=f5e425]:
+          - generic [ref=f5e427]:
+            - generic [ref=f5e428]:
+              - generic [ref=f5e429]: "{}"
+              - generic [ref=f5e430]: GraphQL API
+            - generic [ref=f5e431]: "query GetBooks {"
+            - generic [ref=f5e432]:
+              - generic [ref=f5e433]: "books(limit: 10) {"
+              - generic [ref=f5e434]:
+                - generic [ref=f5e435]: id
+                - generic [ref=f5e436]: title
+                - generic [ref=f5e437]: author
+              - generic [ref=f5e438]: "}"
+            - generic [ref=f5e439]: "}"
+          - generic [ref=f5e440]:
+            - generic [ref=f5e441]:
+              - heading "GraphQL API Practice" [level=3] [ref=f5e442]
+              - paragraph [ref=f5e443]: API Testing
+            - paragraph [ref=f5e444]: GraphQL endpoint for practicing modern API testing with queries, mutations, and schema validation.
+            - button "Start Practicing" [ref=f5e445] [cursor=pointer]
+        - generic [ref=f5e448]:
+          - generic [ref=f5e449]:
+            - generic [ref=f5e450]:
+              - generic [ref=f5e451]: <?xml version="1.0" encoding="UTF-8"?>
+              - generic [ref=f5e452]: <soap:Envelope>
+              - generic [ref=f5e453]:
+                - generic [ref=f5e454]: <soap:Body>
+                - generic [ref=f5e455]:
+                  - generic [ref=f5e456]: <GetVersion>
+                  - generic [ref=f5e457]: <!-- WSDL endpoint -->
+                  - generic [ref=f5e458]: </GetVersion>
+                - generic [ref=f5e459]: </soap:Body>
+              - generic [ref=f5e460]: </soap:Envelope>
+              - generic [ref=f5e461]: Legacy · WSDL · XML Schema
+            - generic [ref=f5e462]: Legacy
+          - generic [ref=f5e464]:
+            - generic [ref=f5e465]:
+              - heading "SOAP Web Service" [level=3] [ref=f5e466]
+              - paragraph [ref=f5e467]: API Testing
+            - paragraph [ref=f5e468]: SOAP-based web service for practicing XML-based API testing, WSDL parsing, and legacy system integration.
+            - button "Start Practicing" [ref=f5e469] [cursor=pointer]
+        - generic [ref=f5e472]:
+          - generic [ref=f5e474]:
+            - generic [ref=f5e475]: 🛒
+            - generic [ref=f5e479]:
+              - generic [ref=f5e480]: Appium · Android APK
+              - generic [ref=f5e481]: "{"
+              - generic [ref=f5e482]:
+                - generic [ref=f5e483]: "\"platform\": \"Android\","
+                - generic [ref=f5e484]: "\"app\": \"store.apk\","
+                - generic [ref=f5e485]: "\"automation\": \"UIAutomator2\""
+              - generic [ref=f5e486]: "}"
+              - generic [ref=f5e487]: Port 4723 · Session Ready
+          - generic [ref=f5e490]:
+            - generic [ref=f5e491]:
+              - heading "General Store Mobile App (APK)" [level=3] [ref=f5e492]
+              - paragraph [ref=f5e493]: Mobile Apps
+            - paragraph [ref=f5e494]: Android application package for practicing Appium mobile automation testing with real app scenarios.
+            - button "Start Practicing" [ref=f5e495] [cursor=pointer]
+        - generic [ref=f5e498]:
+          - generic [ref=f5e499]:
+            - generic [ref=f5e500]:
+              - generic [ref=f5e501]:
+                - generic [ref=f5e502]: 🎭
+                - generic [ref=f5e503]: Playwright QAOps
+              - generic [ref=f5e504]:
+                - generic [ref=f5e505]: Install
+                - generic [ref=f5e506]: →
+                - generic [ref=f5e507]: npm init playwright@latest
+              - generic [ref=f5e508]:
+                - generic [ref=f5e509]: Test
+                - generic [ref=f5e510]: →
+                - generic [ref=f5e511]: test('login flow', ...)
+              - generic [ref=f5e512]:
+                - generic [ref=f5e513]: CI/CD
+                - generic [ref=f5e514]: →
+                - generic [ref=f5e515]: GitHub Actions · Docker
+              - generic [ref=f5e516]:
+                - generic [ref=f5e517]: Report
+                - generic [ref=f5e518]: →
+                - generic [ref=f5e519]: HTML Reporter · Traces ✓
+              - generic [ref=f5e520]: E2E · CI Integration · Best Practices
+            - generic [ref=f5e523]: New
+          - generic [ref=f5e525]:
+            - generic [ref=f5e526]:
+              - heading "Playwright QAOps" [level=3] [ref=f5e527]
+              - paragraph [ref=f5e528]: Resources
+            - paragraph [ref=f5e529]: Comprehensive guide to integrating Playwright into your QA operations — covering CI/CD pipelines, Docker, reporting, and end-to-end best practices.
+            - button "Start Learning" [ref=f5e530] [cursor=pointer]
+        - generic [ref=f5e533]:
+          - generic [ref=f5e534]: New
+          - generic [ref=f5e541]:
+            - generic [ref=f5e542]:
+              - heading "Playwright JavaScript/TypeScript Interview Questions" [level=3] [ref=f5e543]
+              - paragraph [ref=f5e544]: Resources
+            - paragraph [ref=f5e545]: Top 20 core-concept Playwright interview questions with elaborated answers, code, and CLI commands — plus a downloadable PDF.
+            - button "Start Learning" [ref=f5e546] [cursor=pointer]
+    - generic [ref=f5e550]:
+      - generic [ref=f5e551]:
+        - heading "Why Practice Matters?" [level=3] [ref=f5e552]
+        - generic [ref=f5e553]:
+          - paragraph [ref=f5e554]: Watching courses and reading tutorials online will only get you so far. To become a great automation engineer, you'll need extensive hands-on practice.
+          - paragraph [ref=f5e555]: While most online courses provide just lectures and course materials, students are often left to find practice environments themselves. This leads to struggles in implementing new knowledge at work or during interviews.
+          - paragraph [ref=f5e556]: At Rahul Shetty Academy, we provide dedicated live practice applications across different QA automation verticals - UI/Web, Mobile Apps, and API services.
+      - generic [ref=f5e558]:
+        - generic [ref=f5e559]: Did You Know?
+        - heading "Your skills can land you directly in a recruiter's crosshairs." [level=4] [ref=f5e563]
+        - paragraph [ref=f5e564]:
+          - text: Practising is only half the journey. The other half is being
+          - strong [ref=f5e565]: seen
+          - text: by the right people. TechSmartHire connects verified QA professionals with recruiters who are actively hiring — based on demonstrated skill, not just a CV.
+        - paragraph [ref=f5e570]:
+          - text: Complete your skill assessment, get verified, and let recruiters find
+          - strong [ref=f5e571]: you
+          - text: .
+        - link "See How TechSmartHire Can Help" [ref=f5e572] [cursor=pointer]:
+          - /url: https://techsmarthire.com
+    - generic [ref=f5e575]:
+      - generic [ref=f5e576]: Exclusive Academy Access
+      - heading "JOIN OUR ACADEMY" [level=2] [ref=f5e579]
+      - paragraph [ref=f5e580]: Get access to exclusive monthly QA newsletter covering the latest QA & AI testing trends, job openings, new course offerings, and practice projects — completely free when you sign up.
+      - paragraph [ref=f5e581]: Oh, and you also get 2 premium courses for free for a limited time. Just search for below titles after signing up and enroll right away — no payment needed.
+      - generic [ref=f5e582]:
+        - generic [ref=f5e583]: Java Design Patterns for Test Framework
+        - generic [ref=f5e587]: SDET/QA Automation Interview Kit + Java Logic Programs
+      - generic [ref=f5e592]:
+        - link "JOIN NOW - FREE ACCESS" [ref=f5e593] [cursor=pointer]:
+          - /url: https://courses.rahulshettyacademy.com/sign_up
+        - paragraph [ref=f5e594]: Limited time offer - Usually $197, now FREE!
+    - generic [ref=f5e598]:
+      - generic [ref=f5e599]:
+        - heading "Frequently Asked Questions" [level=2] [ref=f5e600]
+        - paragraph [ref=f5e601]: Find answers to common questions about our platform and courses
+      - generic [ref=f5e604]:
+        - heading [level=3] [ref=f5e606]:
+          - button "What is the Practice section?" [ref=f5e607] [cursor=pointer]
+        - heading [level=3] [ref=f5e612]:
+          - button "Is it free?" [ref=f5e613] [cursor=pointer]
+        - heading [level=3] [ref=f5e618]:
+          - button "Do these simulate real world scenarios?" [ref=f5e619] [cursor=pointer]
+        - heading [level=3] [ref=f5e624]:
+          - button "What tools can I practice?" [ref=f5e625] [cursor=pointer]
+        - heading [level=3] [ref=f5e630]:
+          - button "Are tutorials linked?" [ref=f5e631] [cursor=pointer]
+        - heading [level=3] [ref=f5e636]:
+          - button "Do I need to log in?" [ref=f5e637] [cursor=pointer]
+        - heading [level=3] [ref=f5e642]:
+          - button "Can I use it for interview prep?" [ref=f5e643] [cursor=pointer]
+        - heading [level=3] [ref=f5e648]:
+          - button "Are exercises regularly updated?" [ref=f5e649] [cursor=pointer]
+    - contentinfo [ref=f5e653]:
+      - generic [ref=f5e654]:
+        - generic [ref=f5e655]:
+          - generic [ref=f5e656]:
+            - generic [ref=f5e657]:
+              - heading "RAHUL SHETTY" [level=3] [ref=f5e658]
+              - paragraph [ref=f5e659]: Transforming careers through comprehensive QA testing education. Join 1M+ learners worldwide.
+            - link "Contact Us" [ref=f5e660] [cursor=pointer]:
+              - /url: /contact-us
+            - generic [ref=f5e664]:
+              - heading "Connect us on Socials" [level=4] [ref=f5e665]
+              - generic [ref=f5e666]:
+                - link [ref=f5e667] [cursor=pointer]:
+                  - /url: https://www.youtube.com/channel/UCgx5SDcUQWCQ_1CNneQzCRw
+                - link [ref=f5e671] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/in/rahul-shetty-venkatesh/
+                - link [ref=f5e676] [cursor=pointer]:
+                  - /url: https://www.instagram.com/rahulshettyofficial_venkat/
+          - generic [ref=f5e680]:
+            - heading "Navigation" [level=4] [ref=f5e681]
+            - generic [ref=f5e682]:
+              - link "All-Access" [ref=f5e683] [cursor=pointer]:
+                - /url: /all-access-subscription
+              - link "Learning Paths" [ref=f5e684] [cursor=pointer]:
+                - /url: /learning-paths
+              - link "Mentorship" [ref=f5e685] [cursor=pointer]:
+                - /url: /mentorship
+              - link "Career Accelerator" [ref=f5e686] [cursor=pointer]:
+                - /url: /qa-career-accelerator-job-ready
+              - link "Team Accelerator" [ref=f5e687] [cursor=pointer]:
+                - /url: /qa-career-accelerator-for-teams
+              - link "AI Learning PathNEW" [ref=f5e688] [cursor=pointer]:
+                - /url: /ai-learning-path
+              - link "Practice" [ref=f5e689] [cursor=pointer]:
+                - /url: /practice
+              - link "Meet ups" [ref=f5e690] [cursor=pointer]:
+                - /url: https://qasummit.org
+              - link "Blog" [ref=f5e691] [cursor=pointer]:
+                - /url: https://rahulshettyacademy.com/blog/
+              - link "Contact Us" [ref=f5e692] [cursor=pointer]:
+                - /url: /contact-us
+          - generic [ref=f5e693]:
+            - heading "Popular Courses" [level=4] [ref=f5e694]
+            - generic [ref=f5e695]:
+              - link "Selenium WebDriver" [ref=f5e696] [cursor=pointer]:
+                - /url: https://courses.rahulshettyacademy.com/p/selenium-webdriver-interview-questions-tutorial-1
+              - link "Playwright Testing" [ref=f5e697] [cursor=pointer]:
+                - /url: https://courses.rahulshettyacademy.com/p/playwright-js-ts-automation-testing-from-scratch-framework
+              - link "API Testing" [ref=f5e698] [cursor=pointer]:
+                - /url: https://courses.rahulshettyacademy.com/p/rest-api-automation-rest-assured-java
+              - link "AI Agents" [ref=f5e699] [cursor=pointer]:
+                - /url: https://courses.rahulshettyacademy.com/p/learn-agentic-ai-build-multi-agent-automation-workflow
+              - link "AI Testing Tools" [ref=f5e700] [cursor=pointer]:
+                - /url: https://courses.rahulshettyacademy.com/p/learn-generativen-ai-in-software-testing
+              - link "Browse All Courses" [ref=f5e701] [cursor=pointer]:
+                - /url: https://courses.rahulshettyacademy.com/courses
+          - generic [ref=f5e702]:
+            - heading "Support" [level=4] [ref=f5e703]
+            - generic [ref=f5e704]:
+              - link "Student Login" [ref=f5e705] [cursor=pointer]:
+                - /url: https://courses.rahulshettyacademy.com/sign_in
+              - link "Contact Us" [ref=f5e706] [cursor=pointer]:
+                - /url: /contact-us
+              - link "Help Center" [ref=f5e707] [cursor=pointer]:
+                - /url: "#"
+              - link "Community" [ref=f5e708] [cursor=pointer]:
+                - /url: "#"
+              - link "Terms of Service" [ref=f5e709] [cursor=pointer]:
+                - /url: /terms-of-service
+              - link "Privacy Policy" [ref=f5e710] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=f5e712]:
+          - generic [ref=f5e713]:
+            - paragraph [ref=f5e714]: © 2026 Rahul Shetty Academy. All rights reserved.
+            - generic [ref=f5e715]: •
+            - generic [ref=f5e716]: Built with ♥ for testers worldwide.
+          - generic [ref=f5e718]:
+            - generic [ref=f5e719]: contact@rahulshettyacademy.com
+            - generic [ref=f5e720]: Trusted by 1M+ QA Engineers

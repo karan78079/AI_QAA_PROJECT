@@ -1,0 +1,295 @@
+- generic [ref=f7e2]:
+  - region "Notifications (F8)":
+    - list
+  - region "Notifications alt+T"
+  - generic:
+    - generic:
+      - generic:
+        - generic:
+          - generic: Limited Time — Free
+          - button "Dismiss popup"
+        - generic:
+          - heading "Join Our Academy & Unlock 2 Premium Courses — FREE" [level=3]: Join Our Academy & Unlock2 Premium Courses — FREE
+          - paragraph: Sign up once. No credit card. Instant access.
+        - list:
+          - listitem:
+            - generic: Java Design Patterns for Test Framework
+          - listitem:
+            - generic: SDET/QA Automation Interview Kit + Java Logic Programs
+        - link "Sign Up Free →":
+          - /url: https://courses.rahulshettyacademy.com/sign_up
+        - paragraph: Usually $197 · Now completely FREE
+  - generic [ref=f7e3]:
+    - navigation [ref=f7e4]:
+      - generic [ref=f7e6]:
+        - link [ref=f7e8] [cursor=pointer]:
+          - /url: /
+          - img "Rahul Shetty Academy" [ref=f7e9]
+        - generic [ref=f7e10]:
+          - link "Home" [ref=f7e11] [cursor=pointer]:
+            - /url: /
+          - link "All-Access" [ref=f7e15] [cursor=pointer]:
+            - /url: /all-access-subscription
+          - link "Learning Paths" [ref=f7e18] [cursor=pointer]:
+            - /url: /learning-paths
+          - link "Courses" [ref=f7e23] [cursor=pointer]:
+            - /url: /course-library
+          - link "Mentorship" [ref=f7e26] [cursor=pointer]:
+            - /url: /mentorship
+          - button "Career Accelerator (Job/Skill-Oriented) NEW" [ref=f7e32] [cursor=pointer]:
+            - generic [ref=f7e36]:
+              - generic [ref=f7e37]: Career Accelerator
+              - generic [ref=f7e40]: (Job/Skill-Oriented)
+            - generic [ref=f7e41]: NEW
+          - link "Practice Apps" [ref=f7e42] [cursor=pointer]:
+            - /url: /practice
+        - generic [ref=f7e47]:
+          - link "Contact Us" [ref=f7e48] [cursor=pointer]:
+            - /url: /contact-us
+          - button "Resources" [ref=f7e52] [cursor=pointer]
+          - link "Sign Up" [ref=f7e60] [cursor=pointer]:
+            - /url: https://courses.rahulshettyacademy.com/sign_up
+    - generic [ref=f7e61]:
+      - generic [ref=f7e62]: Latest
+      - generic [ref=f7e71]:
+        - generic [ref=f7e72]:
+          - generic [ref=f7e73]: ◆
+          - generic [ref=f7e74]:
+            - text: "🎤 New: QA Career Guidance Talk by Rahul Shetty — 3 hours of career strategy, AI era frameworks, and a 2026 roadmap."
+            - link "Watch Now" [ref=f7e75] [cursor=pointer]:
+              - /url: /qa-career-guidance-talk
+        - generic [ref=f7e76]:
+          - generic [ref=f7e77]: ◆
+          - generic [ref=f7e78]: "🚀 Just Released: New K6 Performance Testing Masterclass is now live- Checkout in Course library"
+        - generic [ref=f7e79]:
+          - generic [ref=f7e80]: ◆
+          - generic [ref=f7e81]:
+            - text: "💼 Get Shortlisted by Recruiters: Take QA skill assessments on"
+            - link "TechSmartHire" [ref=f7e82] [cursor=pointer]:
+              - /url: https://techsmarthire.com
+            - text: and unlock real job opportunities
+        - generic [ref=f7e83]:
+          - generic [ref=f7e84]: ◆
+          - generic [ref=f7e85]:
+            - text: "🧪 New Automation Playground: Practice Web & API Automation on our"
+            - link "Full Stack Event Hub demo application" [ref=f7e86] [cursor=pointer]:
+              - /url: https://eventhub.rahulshettyacademy.com/
+        - generic [ref=f7e87]:
+          - generic [ref=f7e88]: ◆
+          - generic [ref=f7e89]: "🤖 Agentic AI is here: Claude Code-powered QA workflows now covered in the Gen AI & AI Agents Testing course — watch the new additions."
+        - generic [ref=f7e90]:
+          - generic [ref=f7e91]: ◆
+          - generic [ref=f7e92]: 🔥 ISTQB AI Testing course crosses 1,500 students in just 14 days — Surge in demand for Certs
+        - generic [ref=f7e93]:
+          - generic [ref=f7e94]: ◆
+          - generic [ref=f7e95]:
+            - text: "🎓 Limited-Time Access: Unlock 40+ QA & AI courses with"
+            - link "All-Access Membership" [ref=f7e96] [cursor=pointer]:
+              - /url: /all-access-subscription
+            - text: for just $129*
+        - generic [ref=f7e97]:
+          - generic [ref=f7e98]: ◆
+          - generic [ref=f7e99]: "📈 Playwright Surge is Real: Learning consumption has increased by 250%+ in the last quarter"
+        - generic [ref=f7e100]:
+          - generic [ref=f7e101]: ─ ─ ─ ─ ─
+          - generic [ref=f7e102]:
+            - text: 📬 That's all for now —
+            - link "Subscribe to our Newsletter" [ref=f7e103] [cursor=pointer]:
+              - /url: https://courses.rahulshettyacademy.com/sign_up
+            - text: and get updates like these once a month.
+        - generic [ref=f7e104]:
+          - generic [ref=f7e105]: ◆
+          - generic [ref=f7e106]:
+            - text: "🎤 New: QA Career Guidance Talk by Rahul Shetty — 3 hours of career strategy, AI era frameworks, and a 2026 roadmap."
+            - link "Watch Now" [ref=f7e107] [cursor=pointer]:
+              - /url: /qa-career-guidance-talk
+        - generic [ref=f7e108]:
+          - generic [ref=f7e109]: ◆
+          - generic [ref=f7e110]: "🚀 Just Released: New K6 Performance Testing Masterclass is now live- Checkout in Course library"
+        - generic [ref=f7e111]:
+          - generic [ref=f7e112]: ◆
+          - generic [ref=f7e113]:
+            - text: "💼 Get Shortlisted by Recruiters: Take QA skill assessments on"
+            - link "TechSmartHire" [ref=f7e114] [cursor=pointer]:
+              - /url: https://techsmarthire.com
+            - text: and unlock real job opportunities
+        - generic [ref=f7e115]:
+          - generic [ref=f7e116]: ◆
+          - generic [ref=f7e117]:
+            - text: "🧪 New Automation Playground: Practice Web & API Automation on our"
+            - link "Full Stack Event Hub demo application" [ref=f7e118] [cursor=pointer]:
+              - /url: https://eventhub.rahulshettyacademy.com/
+        - generic [ref=f7e119]:
+          - generic [ref=f7e120]: ◆
+          - generic [ref=f7e121]: "🤖 Agentic AI is here: Claude Code-powered QA workflows now covered in the Gen AI & AI Agents Testing course — watch the new additions."
+        - generic [ref=f7e122]:
+          - generic [ref=f7e123]: ◆
+          - generic [ref=f7e124]: 🔥 ISTQB AI Testing course crosses 1,500 students in just 14 days — Surge in demand for Certs
+        - generic [ref=f7e125]:
+          - generic [ref=f7e126]: ◆
+          - generic [ref=f7e127]:
+            - text: "🎓 Limited-Time Access: Unlock 40+ QA & AI courses with"
+            - link "All-Access Membership" [ref=f7e128] [cursor=pointer]:
+              - /url: /all-access-subscription
+            - text: for just $129*
+        - generic [ref=f7e129]:
+          - generic [ref=f7e130]: ◆
+          - generic [ref=f7e131]: "📈 Playwright Surge is Real: Learning consumption has increased by 250%+ in the last quarter"
+        - generic [ref=f7e132]:
+          - generic [ref=f7e133]: ─ ─ ─ ─ ─
+          - generic [ref=f7e134]:
+            - text: 📬 That's all for now —
+            - link "Subscribe to our Newsletter" [ref=f7e135] [cursor=pointer]:
+              - /url: https://courses.rahulshettyacademy.com/sign_up
+            - text: and get updates like these once a month.
+    - generic [ref=f7e136]:
+      - generic [ref=f7e140]:
+        - button [ref=f7e141] [cursor=pointer]
+        - button [ref=f7e145] [cursor=pointer]
+      - generic [ref=f7e150]:
+        - generic [ref=f7e151]: Exclusive Recording
+        - heading "QA Career Guidance Talk by Rahul Shetty" [level=1] [ref=f7e152]:
+          - text: QA Career Guidance Talk
+          - generic [ref=f7e153]: by Rahul Shetty
+        - paragraph [ref=f7e154]: Three hours. One mindset shift. A roadmap that could redefine the trajectory of your QA career.
+        - generic [ref=f7e155]:
+          - generic [ref=f7e156]: 3 hours of content
+          - generic [ref=f7e161]: Live recorded session
+          - generic [ref=f7e165]: For all QA levels
+        - link [ref=f7e171] [cursor=pointer]:
+          - /url: https://courses.rahulshettyacademy.com/p/qa-talk-rahul-shetty
+          - button "Watch the Talk" [ref=f7e172]
+      - generic [ref=f7e173]: Scroll
+    - generic [ref=f7e178]:
+      - paragraph [ref=f7e179]: About the Talk
+      - generic [ref=f7e180]:
+        - paragraph [ref=f7e181]: What does it actually take to succeed in QA in 2026? This exclusive three-hour recording captures Rahul Shetty's live talk — a no-fluff, high-impact session that cuts straight to what matters most for QA professionals navigating the AI era.
+        - paragraph [ref=f7e182]: In this session, Rahul breaks down the evolution of AI through the lens of software testing — tracing how the role of a QA engineer has fundamentally transformed and where it is headed next. This isn't surface-level trend talk. It's a structured, experienced perspective from someone who has trained over a million learners globally.
+        - paragraph [ref=f7e183]: You'll walk away with career strategies, learning frameworks, and mindset shifts that go beyond any single tool or technology. Rahul covers the real conversations happening in the industry — what hiring managers expect, what skills are becoming obsolete, and what separates a QA professional who merely survives from one who leads.
+        - paragraph [ref=f7e184]: Whether you are just starting your QA journey or are a seasoned automation engineer looking to stay relevant, this talk gives you a clear-eyed success strategy for 2026 and beyond — one that accounts for AI-assisted testing, evolving job roles, and how to continuously upskill without burning out.
+    - generic [ref=f7e186]:
+      - generic [ref=f7e187]:
+        - paragraph [ref=f7e188]: What You'll Walk Away With
+        - heading "Six things this talk gives you" [level=2] [ref=f7e189]
+      - generic [ref=f7e190]:
+        - generic [ref=f7e191]:
+          - heading "The AI Shift — Through a QA Lens" [level=3] [ref=f7e203]
+          - paragraph [ref=f7e204]: Understand how AI has reshaped the role of a QA engineer at a structural level — not surface-level hype, but what has actually changed and why.
+        - generic [ref=f7e205]:
+          - heading "What Hiring Managers Actually Expect in 2026" [level=3] [ref=f7e210]
+          - paragraph [ref=f7e211]: The real conversations happening in the industry — which skills are being phased out, what the bar looks like now, and how to get ahead of it.
+        - generic [ref=f7e212]:
+          - heading "Career Strategies That Outlast Any Single Tool" [level=3] [ref=f7e216]
+          - paragraph [ref=f7e217]: Frameworks for continuous learning and career positioning that don't expire when the next tool trend arrives.
+        - generic [ref=f7e218]:
+          - heading "How to Upskill Without Burning Out" [level=3] [ref=f7e224]
+          - paragraph [ref=f7e225]: A structured approach to staying current in a fast-moving industry — without the overwhelm of chasing every new technology.
+        - generic [ref=f7e226]:
+          - heading "Separating Survivors from Leaders" [level=3] [ref=f7e230]
+          - paragraph [ref=f7e231]: The mindset and behavioural shifts that separate QA professionals who stay relevant from those who lead the next wave.
+        - generic [ref=f7e232]:
+          - heading "A Concrete Roadmap for 2026 and Beyond" [level=3] [ref=f7e236]
+          - paragraph [ref=f7e237]: Walk away with a clear-eyed strategy — not inspiration, but an actionable plan tailored to the AI-assisted testing era.
+    - generic [ref=f7e239]:
+      - generic [ref=f7e240]:
+        - paragraph [ref=f7e241]: Who This Is For
+        - heading "This talk meets you where you are" [level=2] [ref=f7e242]
+      - generic [ref=f7e243]:
+        - generic [ref=f7e248]:
+          - heading "Just Starting Out" [level=3] [ref=f7e249]
+          - paragraph [ref=f7e250]: If you're entering QA or in your first 1–2 years, this talk gives you the orientation most people spend years figuring out on their own.
+        - generic [ref=f7e255]:
+          - heading "Seasoned Automation Engineer" [level=3] [ref=f7e256]
+          - paragraph [ref=f7e257]: If you've been in automation for years but feel uncertain about AI's impact on your role, Rahul's perspective will recalibrate your direction.
+    - generic [ref=f7e260]:
+      - img "Rahul Shetty" [ref=f7e261]
+      - generic [ref=f7e262]:
+        - paragraph [ref=f7e263]: Your Speaker
+        - heading "Rahul Shetty" [level=2] [ref=f7e264]
+        - paragraph [ref=f7e265]: Founder, Rahul Shetty Academy · 1M+ students · 195 countries
+        - paragraph [ref=f7e266]: Rahul Shetty is one of the most trusted voices in QA education globally. With 15+ years of industry experience and over a million learners trained, he doesn't speak in abstractions — he speaks from data, from mentorship, and from the front lines of what the industry is actually doing right now.
+    - generic [ref=f7e268]:
+      - heading "Three hours. One mindset shift." [level=2] [ref=f7e269]: Three hours.One mindset shift.
+      - paragraph [ref=f7e270]: A roadmap that could redefine the trajectory of your QA career.
+      - link [ref=f7e271] [cursor=pointer]:
+        - /url: https://courses.rahulshettyacademy.com/p/qa-talk-rahul-shetty
+        - button "Watch the Talk" [ref=f7e272]
+    - contentinfo [ref=f7e273]:
+      - generic [ref=f7e274]:
+        - generic [ref=f7e275]:
+          - generic [ref=f7e276]:
+            - generic [ref=f7e277]:
+              - heading "RAHUL SHETTY" [level=3] [ref=f7e278]
+              - paragraph [ref=f7e279]: Transforming careers through comprehensive QA testing education. Join 1M+ learners worldwide.
+            - link "Contact Us" [ref=f7e280] [cursor=pointer]:
+              - /url: /contact-us
+            - generic [ref=f7e284]:
+              - heading "Connect us on Socials" [level=4] [ref=f7e285]
+              - generic [ref=f7e286]:
+                - link [ref=f7e287] [cursor=pointer]:
+                  - /url: https://www.youtube.com/channel/UCgx5SDcUQWCQ_1CNneQzCRw
+                - link [ref=f7e291] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/in/rahul-shetty-venkatesh/
+                - link [ref=f7e296] [cursor=pointer]:
+                  - /url: https://www.instagram.com/rahulshettyofficial_venkat/
+          - generic [ref=f7e300]:
+            - heading "Navigation" [level=4] [ref=f7e301]
+            - generic [ref=f7e302]:
+              - link "All-Access" [ref=f7e303] [cursor=pointer]:
+                - /url: /all-access-subscription
+              - link "Learning Paths" [ref=f7e304] [cursor=pointer]:
+                - /url: /learning-paths
+              - link "Mentorship" [ref=f7e305] [cursor=pointer]:
+                - /url: /mentorship
+              - link "Career Accelerator" [ref=f7e306] [cursor=pointer]:
+                - /url: /qa-career-accelerator-job-ready
+              - link "Team Accelerator" [ref=f7e307] [cursor=pointer]:
+                - /url: /qa-career-accelerator-for-teams
+              - link "AI Learning PathNEW" [ref=f7e308] [cursor=pointer]:
+                - /url: /ai-learning-path
+              - link "Practice" [ref=f7e309] [cursor=pointer]:
+                - /url: /practice
+              - link "Meet ups" [ref=f7e310] [cursor=pointer]:
+                - /url: https://qasummit.org
+              - link "Blog" [ref=f7e311] [cursor=pointer]:
+                - /url: https://rahulshettyacademy.com/blog/
+              - link "Contact Us" [ref=f7e312] [cursor=pointer]:
+                - /url: /contact-us
+          - generic [ref=f7e313]:
+            - heading "Popular Courses" [level=4] [ref=f7e314]
+            - generic [ref=f7e315]:
+              - link "Selenium WebDriver" [ref=f7e316] [cursor=pointer]:
+                - /url: https://courses.rahulshettyacademy.com/p/selenium-webdriver-interview-questions-tutorial-1
+              - link "Playwright Testing" [ref=f7e317] [cursor=pointer]:
+                - /url: https://courses.rahulshettyacademy.com/p/playwright-js-ts-automation-testing-from-scratch-framework
+              - link "API Testing" [ref=f7e318] [cursor=pointer]:
+                - /url: https://courses.rahulshettyacademy.com/p/rest-api-automation-rest-assured-java
+              - link "AI Agents" [ref=f7e319] [cursor=pointer]:
+                - /url: https://courses.rahulshettyacademy.com/p/learn-agentic-ai-build-multi-agent-automation-workflow
+              - link "AI Testing Tools" [ref=f7e320] [cursor=pointer]:
+                - /url: https://courses.rahulshettyacademy.com/p/learn-generativen-ai-in-software-testing
+              - link "Browse All Courses" [ref=f7e321] [cursor=pointer]:
+                - /url: https://courses.rahulshettyacademy.com/courses
+          - generic [ref=f7e322]:
+            - heading "Support" [level=4] [ref=f7e323]
+            - generic [ref=f7e324]:
+              - link "Student Login" [ref=f7e325] [cursor=pointer]:
+                - /url: https://courses.rahulshettyacademy.com/sign_in
+              - link "Contact Us" [ref=f7e326] [cursor=pointer]:
+                - /url: /contact-us
+              - link "Help Center" [ref=f7e327] [cursor=pointer]:
+                - /url: "#"
+              - link "Community" [ref=f7e328] [cursor=pointer]:
+                - /url: "#"
+              - link "Terms of Service" [ref=f7e329] [cursor=pointer]:
+                - /url: /terms-of-service
+              - link "Privacy Policy" [ref=f7e330] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=f7e332]:
+          - generic [ref=f7e333]:
+            - paragraph [ref=f7e334]: © 2026 Rahul Shetty Academy. All rights reserved.
+            - generic [ref=f7e335]: •
+            - generic [ref=f7e336]: Built with ♥ for testers worldwide.
+          - generic [ref=f7e338]:
+            - generic [ref=f7e339]: contact@rahulshettyacademy.com
+            - generic [ref=f7e340]: Trusted by 1M+ QA Engineers

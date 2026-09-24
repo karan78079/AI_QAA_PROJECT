@@ -1,5 +1,5 @@
 from ai_client import _json_from_response, detect_test_type
-from main import requirements_for_generation, review_test_cases
+from main import build_requirements_prompt, review_generated_test_cases, validate_api_contract
 
 
 def test_detect_api_case():
@@ -25,7 +25,7 @@ def test_parse_json_test_plan():
 
 
 def test_format_approved_requirements():
-    requirements = requirements_for_generation([
+    requirements = build_requirements_prompt([
         {"id": "TC001", "title": "Login", "requirement": "Accept valid credentials"},
         {"id": "MANUAL001", "title": "Logout", "requirement": "End the session"},
     ])
@@ -42,6 +42,37 @@ def test_review_can_approve_specific_test(monkeypatch):
         {"id": "TC002", "title": "Logout", "requirement": "Log out", "priority": "medium"},
     ]
 
-    approved = review_test_cases(cases)
+    approved = review_generated_test_cases(cases)
 
     assert [test_case["id"] for test_case in approved] == ["TC002"]
+
+
+def test_clearer_names_are_available():
+    requirements = build_requirements_prompt([
+        {"id": "TC001", "title": "Login", "requirement": "Accept valid credentials"},
+    ])
+
+    assert "TC001: Login" in requirements
+
+
+def test_validate_api_contract_rejects_invalid_html_response():
+    class FakeResponse:
+        def __init__(self):
+            self.status_code = 404
+            self.headers = {"Content-Type": "text/html; charset=utf-8"}
+            self.text = "<html><body>Cannot GET /product/get-all-products</body></html>"
+
+        def json(self):
+            raise ValueError("response is HTML, not JSON")
+
+    def fake_probe(method, path, payload=None):
+        return FakeResponse()
+
+    ok, message = validate_api_contract(
+        "https://rahulshettyacademy.com",
+        "Validate GET /api/products and POST /api/auth/login",
+        probe=fake_probe,
+    )
+
+    assert ok is False
+    assert "404" in message
