@@ -3,5 +3,6 @@ python-dotenv
 mcp
 pytest
 pytest-html
+allure-pytest
 playwright
 requests

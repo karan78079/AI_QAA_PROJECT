@@ -4,17 +4,19 @@ import os
 import re
 import shutil
 from pathlib import Path
+from urllib.parse import urljoin
 
-from ai_client import generate_discovery_test_plan, generate_test_code, generate_test_plan, repair_test_code
+from ai_client import generate_discovery_test_plan, generate_test_code, generate_test_plan, generate_ui_test_plan_for_requirements, repair_test_code
 from mcp_client import discover_site
-from playwright_runner import classify_failure, run_pytest, validate_python, write_report
+from playwright_runner import classify_failure, run_pytest, write_report
 
 
 ROOT = Path(__file__).resolve().parent
 GENERATED_TEST = ROOT / "generated" / "tests" / "test_case.py"
 GENERATED_TEST_CASES = ROOT / "generated" / "generated_test_cases.json"
 HISTORY_DIR = GENERATED_TEST.parent / "history"
-REPAIR_REPORT = ROOT / "reports" / "repair_report.json"
+REPORTS_DIR = ROOT / "generated" / "reports"
+REPAIR_REPORT = REPORTS_DIR / "repair_report.json"
 
 
 def _extract_api_requirements(requirements_text: str) -> list[tuple[str, str]]:
@@ -41,6 +43,10 @@ def _extract_api_requirements(requirements_text: str) -> list[tuple[str, str]]:
     return ordered_paths
 
 
+def _build_api_url(base_url: str, path: str) -> str:
+    return urljoin(base_url.rstrip("/") + "/", path)
+
+
 def validate_api_contract(base_url: str, requirements_text: str, probe=None) -> tuple[bool, str]:
     if not base_url or not requirements_text:
         return True, "No API contract to validate."
@@ -54,7 +60,7 @@ def validate_api_contract(base_url: str, requirements_text: str, probe=None) -> 
 
         def probe(method: str, path: str, payload=None):
             request_method = method.upper()
-            url = base_url.rstrip("/") + path
+            url = _build_api_url(base_url, path)
             if payload is None:
                 return requests.request(request_method, url, timeout=20)
             return requests.request(request_method, url, json=payload, timeout=20)
@@ -99,7 +105,9 @@ def review_generated_test_cases(test_cases: list[dict]) -> list[dict]:
         print("\nGenerated test cases:")
         for test_case in test_cases:
             state = "APPROVED" if test_case["id"] in approved_test_ids else "PENDING"
-            print(f"[{state}] {test_case['id']} | {test_case['priority']} | {test_case['title']}")
+            requirement_id = test_case.get("requirement_id")
+            source = f" | {requirement_id}" if requirement_id else ""
+            print(f"[{state}] {test_case['id']}{source} | {test_case['priority']} | {test_case['title']}")
         print("\n[a] approve all  [p] approve specific  [s] reject specific  [m] add manual test  [r] reject all  [e] execute approved")
         choice = input("Review action: ").strip().lower()
         if choice == "a":
@@ -138,6 +146,7 @@ def review_test_cases(test_cases: list[dict]) -> list[dict]:
 def build_requirements_prompt(test_cases: list[dict]) -> str:
     return "\n\n".join(
         f"{test_case['id']}: {test_case['title']}\n"
+        f"Source requirement: {test_case.get('requirement_id', '')}\n"
         f"Page URL: {test_case.get('page_url', '')}\n"
         f"Description: {test_case.get('description', test_case.get('requirement', ''))}\n"
         f"Preconditions: {test_case.get('preconditions', [])}\n"
@@ -145,6 +154,36 @@ def build_requirements_prompt(test_cases: list[dict]) -> str:
         f"Expected result: {test_case.get('expected_result', '')}"
         for test_case in test_cases
     )
+
+
+def validate_generated_test_case_coverage(test_code: str, test_cases: list[dict]) -> None:
+    test_functions = re.findall(r"(?m)^\s*def\s+(test_[A-Za-z0-9_]+)\s*\(", test_code)
+    unmatched_ids = []
+    duplicate_ids = []
+    matched_functions: set[str] = set()
+    for test_case in test_cases:
+        case_id = re.sub(r"[^A-Za-z0-9]+", "", test_case["id"]).lower()
+        prefix = f"test_{case_id}"
+        matches = [
+            name for name in test_functions
+            if name.lower() == prefix or name.lower().startswith(f"{prefix}_")
+        ]
+        if not matches:
+            unmatched_ids.append(test_case["id"])
+        elif len(matches) > 1:
+            duplicate_ids.append(test_case["id"])
+        matched_functions.update(matches)
+
+    unassigned_functions = [name for name in test_functions if name not in matched_functions]
+    problems = []
+    if unmatched_ids:
+        problems.append(f"missing test functions for {', '.join(unmatched_ids)}")
+    if duplicate_ids:
+        problems.append(f"multiple test functions for {', '.join(duplicate_ids)}")
+    if unassigned_functions:
+        problems.append(f"functions without a case ID: {', '.join(unassigned_functions)}")
+    if problems:
+        raise ValueError("Generated pytest coverage is incomplete: " + "; ".join(problems))
 
 
 def requirements_for_generation(test_cases: list[dict]) -> str:
@@ -164,6 +203,33 @@ def repair_report_entry(attempt: int, code: str, failure: str, result: str) -> d
     return create_repair_report_entry(attempt, code, failure, result)
 
 
+def _max_repair_attempts() -> int:
+    try:
+        return max(0, int(os.getenv("MAX_REPAIR_ATTEMPTS", "3")))
+    except ValueError:
+        return 3
+
+
+def _load_ui_requirements() -> tuple[str, str] | None:
+    requirements_file = os.getenv("UI_REQUIREMENTS_FILE", "").strip()
+    if not requirements_file:
+        default_path = ROOT / "ui_requirements.md"
+        if not default_path.exists():
+            return None
+        requirements_path = default_path
+    else:
+        requirements_path = Path(requirements_file)
+        if not requirements_path.is_absolute():
+            requirements_path = ROOT / requirements_path
+    try:
+        requirements = requirements_path.read_text(encoding="utf-8")
+    except OSError as error:
+        raise RuntimeError(f"UI requirements file could not be read: {error}") from error
+    if not requirements.strip():
+        raise RuntimeError("UI requirements file is empty.")
+    return str(requirements_path), requirements
+
+
 async def main():
     selected_mode = os.getenv("TEST_MODE", "").strip().lower()
     if selected_mode not in {"ui", "api"}:
@@ -177,15 +243,25 @@ async def main():
         if not url:
             print("A website URL is required.")
             return
+        try:
+            ui_requirements = _load_ui_requirements()
+        except RuntimeError as error:
+            print(error)
+            return
         print("Connecting to MCP and exploring the website...")
         try:
             snapshot = await discover_site(url)
         except RuntimeError as error:
             print(f"Website discovery failed: {error}")
             return
-        print("Generating test cases from website discovery with Gemini...")
         try:
-            plan = generate_discovery_test_plan(url, snapshot)
+            if ui_requirements:
+                requirements_path, requirements = ui_requirements
+                print(f"Generating UI test cases from requirements: {requirements_path}")
+                plan = generate_ui_test_plan_for_requirements(requirements, url, snapshot)
+            else:
+                print("Generating test cases from website discovery with Gemini...")
+                plan = generate_discovery_test_plan(url, snapshot)
         except RuntimeError as error:
             print(f"Test plan generation or validation failed: {error}")
             return
@@ -237,7 +313,7 @@ async def main():
         print("No tests approved. Execution cancelled.")
         return
     approved_requirements = build_requirements_prompt(approved_cases)
-    report_path = ROOT / "reports" / f"{test_type}_testing_report.json"
+    report_path = REPORTS_DIR / f"{test_type}_testing_report.json"
     report_metadata = {
         "test_type": test_type,
         "website_url": url,
@@ -254,18 +330,23 @@ async def main():
     except RuntimeError as error:
         print(f"Gemini unavailable: {error}")
         return
+    try:
+        validate_generated_test_case_coverage(generated_code, approved_cases)
+    except ValueError as error:
+        print(error)
+        print("No tests were executed because generated code did not cover every approved case.")
+        return
     GENERATED_TEST.parent.mkdir(parents=True, exist_ok=True)
     GENERATED_TEST.write_text(generated_code, encoding="utf-8")
     automatic_repairs = 0
+    repair_limit = _max_repair_attempts()
     repair_history = []
     attempts = []
     execution_attempt = 0
     while True:
         execution_attempt += 1
         try:
-            validate_python(GENERATED_TEST)
-            collection = run_pytest(GENERATED_TEST, collect_only=True)
-            result = collection if collection.exit_code != 0 else run_pytest(GENERATED_TEST)
+            result = run_pytest(GENERATED_TEST)
         except Exception as error:
             result = None
             failure_output = str(error)
@@ -273,6 +354,7 @@ async def main():
             failure_output = result.traceback
 
         attempt_status = result.status if result is not None else "failed"
+        counts = result.counts if result is not None else {"passed": 0, "failed": 0, "skipped": 0}
         if repair_history and repair_history[-1]["result"] == "pending":
             repair_history[-1]["result"] = {
                 "status": attempt_status,
@@ -284,22 +366,33 @@ async def main():
             "status": attempt_status,
             "classification": attempt_status if attempt_status == "skipped" else ("passed" if attempt_status == "passed" else classify_failure(failure_output)),
             "duration": result.duration if result is not None else 0,
+            "counts": counts,
             "stdout": result.stdout if result is not None else "",
             "stderr": result.stderr if result is not None else failure_output,
+            "allure_report": result.allure_report_path if result is not None else "",
+            "report_warning": result.report_warning if result is not None else "",
+            "execution_error": failure_output if result is None else "",
         })
         write_report(report_path, attempts, report_metadata)
 
         if result is not None:
-            print(result.stdout)
-            if result.stderr:
-                print(result.stderr)
             print(f"Attempt {execution_attempt}: {result.status} ({result.duration:.2f}s)")
+            print(f"Results: {counts['passed']} passed, {counts['failed']} failed, {counts['skipped']} skipped.")
+            if result.report_path:
+                print(f"JUnit report: {Path(result.report_path).relative_to(ROOT)}")
+            if result.allure_report_path:
+                print(f"Allure report: {Path(result.allure_report_path).relative_to(ROOT)}")
+            if result.report_warning:
+                print(f"Report warning: {result.report_warning}")
             if result.exit_code == 0:
                 print(f"Final status: {result.status}")
                 return
+        else:
+            print(f"Attempt {execution_attempt}: failed (test execution error)")
+            print("Pytest did not start, so no test cases were executed.")
+            print(f"Runner error: {failure_output}")
 
-        repair_number = automatic_repairs + 1
-        if automatic_repairs >= 2:
+        if automatic_repairs >= repair_limit:
             REPAIR_REPORT.parent.mkdir(parents=True, exist_ok=True)
             REPAIR_REPORT.write_text(json.dumps({
                 "website_url": url,
@@ -311,11 +404,15 @@ async def main():
                 "changes_made": "See each repair entry and generated test history.",
                 "current_test_status": "failed",
             }, indent=2), encoding="utf-8")
-            print(f"Automatic repair limit reached. Report: {REPAIR_REPORT}")
-            if input("Continue with another repair? [y/N]: ").strip().lower() != "y":
-                print("Framework paused for human review.")
-                return
+            print(f"Repair limit reached ({repair_limit}). Report: {REPAIR_REPORT}")
+            print("Framework paused for human review.")
+            return
 
+        if input("Continue with another repair? [y/N]: ").strip().lower() != "y":
+            print("Framework paused for human review.")
+            return
+
+        repair_number = automatic_repairs + 1
         HISTORY_DIR.mkdir(parents=True, exist_ok=True)
         version = repair_number
         shutil.copy2(GENERATED_TEST, HISTORY_DIR / f"test_case_v{version}.py")

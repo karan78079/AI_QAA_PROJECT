@@ -1,0 +1,35 @@
+exclude: (^|/)(generated|reports|node_modules|\.pytest_cache|\.playwright-mcp)(/|$)
+
+repos:
+  - repo: local
+    hooks:
+      - id: trailing-whitespace
+        name: trim trailing whitespace
+        entry: python -m pre_commit_hooks.trailing_whitespace_fixer
+        language: system
+        types: [text]
+      - id: end-of-file
+        name: ensure newline at end of file
+        entry: python -m pre_commit_hooks.end_of_file_fixer
+        language: system
+        types: [text]
+      - id: check-yaml
+        name: check YAML
+        entry: python -m pre_commit_hooks.check_yaml
+        language: system
+        types: [yaml]
+      - id: check-json
+        name: check JSON
+        entry: python -m pre_commit_hooks.check_json
+        language: system
+        types: [json]
+      - id: check-merge-conflict
+        name: check merge conflicts
+        entry: python -m pre_commit_hooks.check_merge_conflict
+        language: system
+        types: [text]
+      - id: ruff
+        name: check Python with Ruff
+        entry: python -m ruff check --select=E9,F63,F7,F82
+        language: system
+        types: [python]

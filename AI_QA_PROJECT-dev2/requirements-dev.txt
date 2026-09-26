@@ -1,0 +1,4 @@
+-r requirements.txt
+pre-commit>=4.0,<5
+pre-commit-hooks>=5.0,<6
+ruff>=0.9.10,<1

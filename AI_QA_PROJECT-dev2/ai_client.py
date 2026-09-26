@@ -235,6 +235,66 @@ def generate_discovery_test_plan(url: str, browser_snapshot: str) -> dict:
 	return generate_discovery_test_plan_from_snapshot(url, browser_snapshot)
 
 
+def generate_ui_test_plan_for_requirements(requirements: str, url: str, browser_snapshot: str) -> dict:
+	requirement_ids = list(dict.fromkeys(re.findall(r"(?m)^\s*(?:[-*]\s*)?([A-Za-z][A-Za-z0-9_-]*-\d+)\s*:", requirements)))
+	if not requirement_ids:
+		raise RuntimeError("UI requirements must include IDs such as REQ-001: at the start of each requirement.")
+
+	model = os.getenv("GEMINI_MODEL", "gemini-3.6-flash")
+	messages = [
+		{
+			"role": "system",
+			"content": """
+You are a senior QA analyst. Generate UI test cases only from the supplied
+requirements. Use the browser snapshot as evidence for pages and visible
+controls; do not invent requirements, selectors, credentials, or behavior.
+Return only valid JSON in this shape:
+{"test_type":"ui", "test_cases":[
+  {"id":"TC001", "requirement_id":"REQ-001", "page_url":"exact discovered URL", "title":"short title", "description":"goal", "preconditions":[], "steps":["..."], "expected_result":"...", "priority":"high|medium|low"}
+]}
+Create at least one independently approvable test case for every supplied
+requirement ID. Keep each requirement ID exactly as provided. One requirement
+may have multiple tests. Do not create tests unrelated to the requirements.
+""",
+		},
+		{
+			"role": "user",
+			"content": (
+				f"WEBSITE URL:\n{url}\n\nUI REQUIREMENTS:\n{requirements}"
+				f"\n\nBROWSER DISCOVERY SNAPSHOT:\n{browser_snapshot}"
+			),
+		},
+	]
+	response = _request(messages, model)
+	content = response.choices[0].message.content or ""
+	plan = _extract_json_payload(content)
+	if plan.get("test_type") != "ui" or not isinstance(plan.get("test_cases"), list):
+		raise RuntimeError("Gemini returned an incomplete UI requirements test plan")
+	if not plan["test_cases"]:
+		raise RuntimeError("Gemini returned no UI test cases for the supplied requirements")
+
+	covered_ids: set[str] = set()
+	for index, test_case in enumerate(plan["test_cases"], start=1):
+		test_case.setdefault("id", f"TC{index:03d}")
+		test_case.setdefault("page_url", url)
+		test_case.setdefault("priority", "medium")
+		test_case.setdefault("description", test_case.get("requirement", ""))
+		test_case.setdefault("preconditions", [])
+		test_case.setdefault("steps", [])
+		test_case.setdefault("expected_result", "")
+		requirement_id = test_case.get("requirement_id")
+		if requirement_id not in requirement_ids:
+			raise RuntimeError(f"Gemini returned an unknown UI requirement ID: {requirement_id!r}")
+		if not test_case.get("title") or not test_case["steps"]:
+			raise RuntimeError("Gemini returned an invalid UI requirements test case")
+		covered_ids.add(requirement_id)
+
+	missing_ids = set(requirement_ids) - covered_ids
+	if missing_ids:
+		raise RuntimeError("Gemini omitted UI test coverage for requirement(s): " + ", ".join(sorted(missing_ids)))
+	return plan
+
+
 def _request_lm_response(messages: list[dict[str, str]], model: str):
 	for attempt in range(3):
 		try:
@@ -275,6 +335,8 @@ You generate executable Python pytest tests for REST API validation using the `r
 Return only one complete Python source file, without Markdown fences or explanations.
 Use environment variables for secrets and credentials such as API_BASE_URL, API_TOKEN, TEST_EMAIL, TEST_PASSWORD.
 Never hardcode real credentials or tokens in the generated source.
+Resolve API endpoint paths with `urllib.parse.urljoin(API_BASE_URL, endpoint_path)` and keep endpoint paths root-relative (starting with `/api/`).
+Generate exactly one separate pytest function for each supplied test case. Name each function with its case ID, for example `test_tc001_login`; do not omit, merge, split, or skip cases.
 Include `from dotenv import load_dotenv` and call `load_dotenv()` so the generated test works when run directly from pytest.
 The generated file must contain at least one function named test_... and must be self-contained.
 Use `requests.Session()` for reusable clients when helpful.
@@ -312,12 +374,16 @@ Return only one complete Python source file, without Markdown fences or explanat
 Use the supplied browser snapshot as the source of truth for locators.
 Use os.getenv('TEST_EMAIL') and os.getenv('TEST_PASSWORD') for credentials;
 never copy credential values into the generated source.
+Generate exactly one separate pytest function for each approved test case. Include its case ID in the function name, for example `test_tc001_login`; do not omit, merge, split, or skip any case.
 Include `from dotenv import load_dotenv` and call `load_dotenv()` so the generated
 test works when run directly from pytest. This application uses hash routing;
 wait for URLs containing `/#/dashboard/`, `/#/dashboard/cart`,
 `/#/dashboard/order`, `/#/dashboard/thanks`, or `/#/auth/login` as appropriate.
 Use a specific locator such as `[role='alert']` or `.toast-error`, not a selector
 that matches a container and its child at the same time.
+Use Python Playwright API names in snake_case, such as `to_be_visible` and
+`to_have_value`. Never use JavaScript/TypeScript camelCase assertions such as
+`toHaveValue` or JavaScript regex literals such as `/India/i`.
 Launch every Playwright browser with `headless=True`.
 The generated file must contain at least one function named test_... and must be
 self-contained, including a sync_playwright context and browser cleanup.
@@ -390,6 +456,9 @@ Return only the complete corrected Python source file, without Markdown fences o
 explanations. Preserve the requested coverage, use the browser snapshot as the
 source of truth, and do not hardcode credentials. Keep load_dotenv(), use
 headless=True, and handle this application's hash-based URLs with /#/ patterns.
+Use Python Playwright API names in snake_case, such as `to_be_visible` and
+`to_have_value`. Never use JavaScript/TypeScript camelCase assertions such as
+`toHaveValue` or JavaScript regex literals such as `/India/i`.
 Fix the reported failure rather than removing the failing scenario. The result
 must contain at least one function named test_... and be valid Python.
 """,

@@ -14,7 +14,7 @@ The project combines:
 - Playwright for UI test execution.
 - `requests` for API test execution.
 - pytest for validation and execution.
-- JSON, HTML, JUnit, and Allure reports for results.
+- JSON, HTML, and JUnit reports for results.
 
 ## 2. Problem Solved
 
@@ -38,8 +38,8 @@ This framework reduces that effort by creating a pipeline that can:
 User configuration and test mode
               |
               v
-          main.py
-     Orchestration layer
+                main.py
+        Orchestration layer
         /            \
        /              \
       v                v
@@ -51,8 +51,8 @@ User configuration and test mode
       |                |
       +-------+--------+
               v
-        Gemini AI client
-          ai_client.py
+                                                                                  Gemini AI client
+                                                                          ai_client.py
               |
               v
      Generated test cases
@@ -82,7 +82,7 @@ User configuration and test mode
 
 ## 4. Main Components
 
-### `main.py` - Orchestration
+### `main.py` - Entry point
 
 Controls the complete workflow:
 
@@ -94,7 +94,17 @@ Controls the complete workflow:
 - Generates the pytest source file.
 - Validates and executes the generated tests.
 - Starts bounded repair attempts after failures.
-- Writes execution and repair reports.
+- Writes generated test cases and per-attempt JSON reports under `generated/`.
+
+### Active Python modules
+
+The `main.py` entry point currently imports these top-level modules directly:
+
+- `ai_client.py`: Gemini test generation and repair.
+- `mcp_client.py`: Playwright MCP discovery.
+- `playwright_runner.py`: pytest execution and HTML, JUnit, and Allure reporting.
+
+`qa_app/` is not currently wired into the entry point.
 
 ### `mcp_client.py` - Browser Discovery
 
@@ -129,7 +139,7 @@ Provides mode-independent test execution:
 - Confirms that a `test_...` function exists.
 - Runs pytest once so execution and collection failures share the same report path.
 - Captures output, errors, status, and duration.
-- Creates HTML and JUnit reports, plus Allure result data and HTML when configured.
+- Creates HTML, JUnit, and Allure reports.
 - Classifies common failures.
 - Writes JSON attempt reports.
 
@@ -140,18 +150,20 @@ Contains AI-created test output:
 - `generated/generated_test_cases.json`: AI-generated test plan saved before approval.
 - `generated/tests/test_case.py`: latest generated pytest file.
 - `generated/tests/history/`: previous versions saved before repairs.
-- `generated/reports/allure-results/`: Allure result data.
-- `generated/reports/allure-report/index.html`: Allure HTML report.
 
 ### `generated/reports/` - Results
 
-Contains execution evidence:
+Contains execution evidence produced by each run:
 
 - `ui_testing_report.json`: UI attempts and metadata.
 - `api_testing_report.json`: API attempts and metadata.
 - `test-report.html`: human-readable pytest report.
 - `test-results.xml`: JUnit report for CI tools.
+- `allure-results/` and `allure-report/index.html`: Allure result data and HTML report.
 - `repair_report.json`: repair history and final failure information.
+
+The generated HTML, JUnit XML, JSON, and repair reports are intentionally kept
+under `generated/reports/` so generated output has one predictable location.
 
 ### `tests/` - Framework Tests
 
@@ -160,7 +172,26 @@ requirement formatting, and human approval logic.
 
 ## 5. UI Testing Flow
 
-UI testing starts from a website URL.
+UI testing starts from a website URL. It can optionally use a requirements file
+configured with `UI_REQUIREMENTS_FILE`; if not configured, the project uses
+`ui_requirements.md` when that file exists. Otherwise, it retains discovery-only
+test generation.
+
+Requirements-driven UI files use one uniquely identified requirement per line:
+
+```text
+REQ-001: A signed-in user can search products by name.
+REQ-002: A signed-in user can add a product to the cart.
+```
+
+Generated test cases carry the matching `requirement_id`. The planner checks
+that every supplied ID has test coverage and rejects missing or unknown IDs.
+
+Example `.env` setting:
+
+```env
+UI_REQUIREMENTS_FILE=ui_requirements.md
+```
 
 ```text
 TEST_MODE=ui
@@ -328,9 +359,9 @@ npm install --global allure-commandline
 C:\Users\Jatin\AppData\Local\Python\bin\python.exe main.py
 ```
 
-Allure HTML generation also requires Java. The test-case plan is written to
-`generated/generated_test_cases.json` before approval; the attempt JSON and
-execution reports are created once pytest starts.
+Allure HTML generation also requires Java. Reports are written only after a test
+execution starts; the generated test-case plan is saved separately to
+`generated/generated_test_cases.json` before approval.
 
 For UI mode, approve and execute all generated cases:
 
@@ -356,6 +387,23 @@ C:\Users\Jatin\AppData\Local\Python\bin\python.exe -m py_compile main.py ai_clie
 ```
 
 Use the pytest summary to confirm that all collected framework tests passed.
+
+### Pre-commit checks
+
+Install the development tools and enable checks before each Git commit:
+
+```cmd
+python -m pip install -r requirements-dev.txt
+python -m pre_commit install
+```
+
+Run the checks manually across tracked files:
+
+```cmd
+python -m pre_commit run --all-files
+```
+
+Generated reports and test artifacts are excluded from these checks.
 
 ## 12. Presentation Demonstration Script
 
