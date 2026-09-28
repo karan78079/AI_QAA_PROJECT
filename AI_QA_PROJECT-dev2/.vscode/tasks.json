@@ -1,0 +1,19 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run focused pytest runner tests",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"-m",
+				"pytest",
+				"tests/test_runner.py",
+				"-q",
+				"-rA"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}

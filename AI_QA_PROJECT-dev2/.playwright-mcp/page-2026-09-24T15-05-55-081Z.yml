@@ -1,0 +1,30 @@
+- generic [ref=e287]:
+  - navigation [ref=e289]:
+    - generic [ref=e291]:
+      - link "Automation Automation Practice":
+        - /url: ""
+        - generic [ref=e292] [cursor=pointer]:
+          - heading "Automation" [level=3] [ref=e293]
+          - paragraph [ref=e294]: Automation Practice
+    - text: 
+    - link "🎯 I'll help you prepare for your next QA job — Explore the QA Career Accelerator." [ref=e295] [cursor=pointer]:
+      - /url: https://rahulshettyacademy.com/qa-career-accelerator-job-ready
+    - list [ref=e296]:
+      - listitem [ref=e297] [cursor=pointer]:
+        - button " HOME" [ref=e298]:
+          - generic [ref=e299]: 
+          - text: HOME
+      - listitem
+      - listitem [ref=e300] [cursor=pointer]:
+        - button " ORDERS" [ref=e301]:
+          - generic [ref=e302]: 
+          - text: ORDERS
+      - listitem [ref=e303] [cursor=pointer]:
+        - button " Cart" [ref=e304]:
+          - generic [ref=e305]: 
+          - text: Cart
+      - listitem [ref=e306] [cursor=pointer]:
+        - button "Sign Out" [ref=e307]:
+          - generic [aria-hidden] [ref=e308]: 
+          - text: Sign Out
+  - generic [ref=e309]: Loading....

@@ -1,0 +1,7 @@
+[     584ms] [WARNING] [ngx-spinner]: Property "type" is missed. Please, provide animation type to <ngx-spinner> component
+        and ensure css is added to angular.json file @ https://rahulshettyacademy.com/client/435.11ebda32f57c8d490fa0.js:0
+[     690ms] [LOG] 0 @ https://rahulshettyacademy.com/client/135.95eb921e6931c00ece57.js:0
+[     731ms] [LOG] 1 @ https://rahulshettyacademy.com/client/135.95eb921e6931c00ece57.js:0
+[     765ms] [LOG] 2 @ https://rahulshettyacademy.com/client/135.95eb921e6931c00ece57.js:0
+[    1984ms] [ERROR] Access to fetch at 'https://px.ads.linkedin.com/wa/?medium=fetch&fmt=g' from origin 'https://rahulshettyacademy.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ https://rahulshettyacademy.com/client/#/dashboard/myorders:0
+[    1985ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://px.ads.linkedin.com/wa/?medium=fetch&fmt=g:0
